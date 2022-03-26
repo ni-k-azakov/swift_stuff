@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ltn-fR-Tli">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="528"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="656"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0a7-SI-agt">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
@@ -74,14 +74,30 @@
                                                     <constraint firstItem="fOH-RT-vD2" firstAttribute="top" secondItem="0a7-SI-agt" secondAttribute="top" constant="5" id="v8N-HN-tiU"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="er4-mt-TJ3">
+                                                <rect key="frame" x="0.0" y="128" width="414" height="128"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добрый день, Дмитрий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSc-gV-MrJ">
+                                                        <rect key="frame" x="10" y="20" width="320" height="88"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="pSc-gV-MrJ" firstAttribute="leading" secondItem="er4-mt-TJ3" secondAttribute="leading" constant="10" id="39v-lC-IYQ"/>
+                                                    <constraint firstItem="pSc-gV-MrJ" firstAttribute="top" secondItem="er4-mt-TJ3" secondAttribute="top" constant="20" id="8jV-jZ-9JM"/>
+                                                    <constraint firstAttribute="bottom" secondItem="pSc-gV-MrJ" secondAttribute="bottom" constant="20" id="N3G-2w-tZh"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeJ-ac-y2r">
-                                                <rect key="frame" x="0.0" y="128" width="414" height="270"/>
+                                                <rect key="frame" x="0.0" y="256" width="414" height="270"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mE1-TM-fPj">
                                                         <rect key="frame" x="10" y="10" width="394" height="250"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Близжайший заказ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl9-KJ-KG1">
-                                                                <rect key="frame" x="10" y="10" width="162.5" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ближайший заказ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl9-KJ-KG1">
+                                                                <rect key="frame" x="10" y="10" width="153.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -166,7 +182,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Svg-1H-qUV">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Svg-1H-qUV">
                                                         <rect key="frame" x="10" y="10" width="394" height="250"/>
                                                         <subviews>
                                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POb-pE-INX">
@@ -445,7 +461,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRs-Ar-rvB">
-                                                <rect key="frame" x="0.0" y="398" width="414" height="130"/>
+                                                <rect key="frame" x="0.0" y="526" width="414" height="130"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zx-r3-Qk0" userLabel="1">
                                                         <rect key="frame" x="10" y="10" width="207" height="50"/>
