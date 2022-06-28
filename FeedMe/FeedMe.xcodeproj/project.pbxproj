@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1587DB281AF3A800C50835 /* BrandApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1587DA281AF3A800C50835 /* BrandApiClient.swift */; };
+		5D1587DD281AF84100C50835 /* ApiErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1587DC281AF84100C50835 /* ApiErrors.swift */; };
+		5D1587E0281B02B000C50835 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1587DF281B02B000C50835 /* BrandCell.swift */; };
+		5D16E602283A451700985217 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16E601283A451700985217 /* Brand.swift */; };
+		5D258FD8283AA25800DE4D53 /* UIStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D258FD7283AA25700DE4D53 /* UIStarView.swift */; };
 		5D5E4886280C66F500AC1825 /* ScheduleNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E4885280C66F500AC1825 /* ScheduleNote.swift */; };
 		5D5E4889280C676A00AC1825 /* OrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E4888280C676A00AC1825 /* OrderType.swift */; };
 		5D5E488B280C6B1200AC1825 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5E488A280C6B1200AC1825 /* ScheduleCell.swift */; };
@@ -18,10 +23,22 @@
 		5D973CC127EF49ED00B073AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D973CBF27EF49ED00B073AA /* Main.storyboard */; };
 		5D973CC327EF49EE00B073AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D973CC227EF49EE00B073AA /* Assets.xcassets */; };
 		5D973CC627EF49EE00B073AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D973CC427EF49EE00B073AA /* LaunchScreen.storyboard */; };
+		5D9FCAD7283FFF0900371DFD /* FeedMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D9FCAD5283FFF0900371DFD /* FeedMe.xcdatamodeld */; };
+		5D9FCADA284007EB00371DFD /* CDNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9FCAD9284007EB00371DFD /* CDNote.swift */; };
 		5DEAD924280DBCB200E8A66F /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD923280DBCB200E8A66F /* OrderController.swift */; };
+		5DEAD928281023CB00E8A66F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD927281023CB00E8A66F /* Order.swift */; };
+		5DEAD92A2810246700E8A66F /* BrandJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD9292810246700E8A66F /* BrandJSON.swift */; };
+		5DEAD92C2810267900E8A66F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD92B2810267900E8A66F /* Item.swift */; };
+		5DEAD92E2810271B00E8A66F /* PaymentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD92D2810271B00E8A66F /* PaymentType.swift */; };
+		5DEAD9302813161E00E8A66F /* CreateOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAD92F2813161E00E8A66F /* CreateOrderController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D1587DA281AF3A800C50835 /* BrandApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandApiClient.swift; sourceTree = "<group>"; };
+		5D1587DC281AF84100C50835 /* ApiErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrors.swift; sourceTree = "<group>"; };
+		5D1587DF281B02B000C50835 /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
+		5D16E601283A451700985217 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		5D258FD7283AA25700DE4D53 /* UIStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStarView.swift; sourceTree = "<group>"; };
 		5D5E4885280C66F500AC1825 /* ScheduleNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNote.swift; sourceTree = "<group>"; };
 		5D5E4888280C676A00AC1825 /* OrderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderType.swift; sourceTree = "<group>"; };
 		5D5E488A280C6B1200AC1825 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
@@ -35,7 +52,14 @@
 		5D973CC227EF49EE00B073AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D973CC527EF49EE00B073AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D973CC727EF49EE00B073AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D9FCAD6283FFF0900371DFD /* FeedMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedMe.xcdatamodel; sourceTree = "<group>"; };
+		5D9FCAD9284007EB00371DFD /* CDNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDNote.swift; sourceTree = "<group>"; };
 		5DEAD923280DBCB200E8A66F /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
+		5DEAD927281023CB00E8A66F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		5DEAD9292810246700E8A66F /* BrandJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandJSON.swift; sourceTree = "<group>"; };
+		5DEAD92B2810267900E8A66F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		5DEAD92D2810271B00E8A66F /* PaymentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentType.swift; sourceTree = "<group>"; };
+		5DEAD92F2813161E00E8A66F /* CreateOrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,16 +73,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D5E4887280C675400AC1825 /* logic */ = {
+		5D1587D9281AF39500C50835 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5DEAD9292810246700E8A66F /* BrandJSON.swift */,
+				5D1587DC281AF84100C50835 /* ApiErrors.swift */,
+				5D1587DA281AF3A800C50835 /* BrandApiClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5D1587DE281B00A800C50835 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D973CBD27EF49ED00B073AA /* ViewController.swift */,
+				5DEAD923280DBCB200E8A66F /* OrderController.swift */,
+				5DEAD92F2813161E00E8A66F /* CreateOrderController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5D16E5FF283A3C2000985217 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5DEAD927281023CB00E8A66F /* Order.swift */,
+				5DEAD92B2810267900E8A66F /* Item.swift */,
+				5D16E601283A451700985217 /* Brand.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		5D16E600283A3C3900985217 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5D1587DF281B02B000C50835 /* BrandCell.swift */,
+				5D5E488A280C6B1200AC1825 /* ScheduleCell.swift */,
+				5D5E4890280C78FE00AC1825 /* OrderCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5D5E4887280C675400AC1825 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
 				5D5E4885280C66F500AC1825 /* ScheduleNote.swift */,
 				5D5E4888280C676A00AC1825 /* OrderType.swift */,
-				5D5E488A280C6B1200AC1825 /* ScheduleCell.swift */,
 				5D5E488E280C762E00AC1825 /* OrderNote.swift */,
-				5D5E4890280C78FE00AC1825 /* OrderCell.swift */,
+				5DEAD92D2810271B00E8A66F /* PaymentType.swift */,
 			);
-			path = logic;
+			path = Logic;
 			sourceTree = "<group>";
 		};
 		5D973CAD27EF49ED00B073AA = {
@@ -80,17 +143,30 @@
 		5D973CB827EF49ED00B073AA /* FeedMe */ = {
 			isa = PBXGroup;
 			children = (
-				5D5E4887280C675400AC1825 /* logic */,
+				5D9FCAD8284007CE00371DFD /* Core Data Entities */,
+				5D16E600283A3C3900985217 /* Cells */,
+				5D16E5FF283A3C2000985217 /* Entities */,
+				5D1587DE281B00A800C50835 /* Controllers */,
+				5D1587D9281AF39500C50835 /* Network */,
+				5D5E4887280C675400AC1825 /* Logic */,
 				5D973CB927EF49ED00B073AA /* AppDelegate.swift */,
+				5D9FCAD5283FFF0900371DFD /* FeedMe.xcdatamodeld */,
 				5D973CBB27EF49ED00B073AA /* SceneDelegate.swift */,
-				5D973CBD27EF49ED00B073AA /* ViewController.swift */,
 				5D973CBF27EF49ED00B073AA /* Main.storyboard */,
 				5D973CC227EF49EE00B073AA /* Assets.xcassets */,
 				5D973CC427EF49EE00B073AA /* LaunchScreen.storyboard */,
 				5D973CC727EF49EE00B073AA /* Info.plist */,
-				5DEAD923280DBCB200E8A66F /* OrderController.swift */,
+				5D258FD7283AA25700DE4D53 /* UIStarView.swift */,
 			);
 			path = FeedMe;
+			sourceTree = "<group>";
+		};
+		5D9FCAD8284007CE00371DFD /* Core Data Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5D9FCAD9284007EB00371DFD /* CDNote.swift */,
+			);
+			path = "Core Data Entities";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,14 +241,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D5E4889280C676A00AC1825 /* OrderType.swift in Sources */,
+				5D16E602283A451700985217 /* Brand.swift in Sources */,
+				5D1587E0281B02B000C50835 /* BrandCell.swift in Sources */,
+				5D9FCADA284007EB00371DFD /* CDNote.swift in Sources */,
+				5D1587DD281AF84100C50835 /* ApiErrors.swift in Sources */,
+				5D258FD8283AA25800DE4D53 /* UIStarView.swift in Sources */,
 				5D973CBE27EF49ED00B073AA /* ViewController.swift in Sources */,
+				5DEAD92A2810246700E8A66F /* BrandJSON.swift in Sources */,
+				5DEAD928281023CB00E8A66F /* Order.swift in Sources */,
+				5DEAD92C2810267900E8A66F /* Item.swift in Sources */,
 				5D973CBA27EF49ED00B073AA /* AppDelegate.swift in Sources */,
 				5DEAD924280DBCB200E8A66F /* OrderController.swift in Sources */,
 				5D5E488F280C762E00AC1825 /* OrderNote.swift in Sources */,
 				5D5E4886280C66F500AC1825 /* ScheduleNote.swift in Sources */,
+				5D9FCAD7283FFF0900371DFD /* FeedMe.xcdatamodeld in Sources */,
+				5DEAD92E2810271B00E8A66F /* PaymentType.swift in Sources */,
 				5D5E488B280C6B1200AC1825 /* ScheduleCell.swift in Sources */,
 				5D5E4891280C78FE00AC1825 /* OrderCell.swift in Sources */,
+				5DEAD9302813161E00E8A66F /* CreateOrderController.swift in Sources */,
 				5D973CBC27EF49ED00B073AA /* SceneDelegate.swift in Sources */,
+				5D1587DB281AF3A800C50835 /* BrandApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +482,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5D9FCAD5283FFF0900371DFD /* FeedMe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5D9FCAD6283FFF0900371DFD /* FeedMe.xcdatamodel */,
+			);
+			currentVersion = 5D9FCAD6283FFF0900371DFD /* FeedMe.xcdatamodel */;
+			path = FeedMe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5D973CAE27EF49ED00B073AA /* Project object */;
 }

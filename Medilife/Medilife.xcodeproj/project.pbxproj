@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D0569AF284E3C2E007BC143 /* MedilifeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0569AE284E3C2E007BC143 /* MedilifeApp.swift */; };
+		5D0569B1284E3C2E007BC143 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0569B0284E3C2E007BC143 /* ContentView.swift */; };
+		5D0569B3284E3C2F007BC143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D0569B2284E3C2F007BC143 /* Assets.xcassets */; };
+		5D0569B6284E3C2F007BC143 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D0569B5284E3C2F007BC143 /* Preview Assets.xcassets */; };
+		5D0569BD284E56A5007BC143 /* RecordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0569BC284E56A5007BC143 /* RecordListView.swift */; };
+		5D0569C0284F6469007BC143 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0569BF284F6469007BC143 /* ProfileView.swift */; };
+		5D0569C328500F19007BC143 /* MedilifeApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0569C228500F19007BC143 /* MedilifeApiClient.swift */; };
+		5D5398B52850B3D8000AABFD /* DiscountInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5398B42850B3D8000AABFD /* DiscountInfoResponse.swift */; };
+		5D5398B72850B3ED000AABFD /* DiscountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5398B62850B3ED000AABFD /* DiscountInfo.swift */; };
+		5D5398B92850C129000AABFD /* DiscountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5398B82850C129000AABFD /* DiscountsViewModel.swift */; };
+		5D5398BB2850C929000AABFD /* DiscountListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5398BA2850C929000AABFD /* DiscountListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5D0569AB284E3C2E007BC143 /* Medilife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Medilife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0569AE284E3C2E007BC143 /* MedilifeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedilifeApp.swift; sourceTree = "<group>"; };
+		5D0569B0284E3C2E007BC143 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5D0569B2284E3C2F007BC143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D0569B5284E3C2F007BC143 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5D0569BC284E56A5007BC143 /* RecordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListView.swift; sourceTree = "<group>"; };
+		5D0569BF284F6469007BC143 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5D0569C228500F19007BC143 /* MedilifeApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedilifeApiClient.swift; sourceTree = "<group>"; };
+		5D5398B42850B3D8000AABFD /* DiscountInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountInfoResponse.swift; sourceTree = "<group>"; };
+		5D5398B62850B3ED000AABFD /* DiscountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountInfo.swift; sourceTree = "<group>"; };
+		5D5398B82850C129000AABFD /* DiscountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountsViewModel.swift; sourceTree = "<group>"; };
+		5D5398BA2850C929000AABFD /* DiscountListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountListView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D0569A8284E3C2E007BC143 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D0569A2284E3C2E007BC143 = {
+			isa = PBXGroup;
+			children = (
+				5D0569AD284E3C2E007BC143 /* Medilife */,
+				5D0569AC284E3C2E007BC143 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5D0569AC284E3C2E007BC143 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D0569AB284E3C2E007BC143 /* Medilife.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D0569AD284E3C2E007BC143 /* Medilife */ = {
+			isa = PBXGroup;
+			children = (
+				5D0569C128500EDE007BC143 /* Network */,
+				5D0569AE284E3C2E007BC143 /* MedilifeApp.swift */,
+				5D0569BE284E56B7007BC143 /* Views */,
+				5D0569B2284E3C2F007BC143 /* Assets.xcassets */,
+				5D0569B4284E3C2F007BC143 /* Preview Content */,
+			);
+			path = Medilife;
+			sourceTree = "<group>";
+		};
+		5D0569B4284E3C2F007BC143 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5D0569B5284E3C2F007BC143 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5D0569BE284E56B7007BC143 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D0569B0284E3C2E007BC143 /* ContentView.swift */,
+				5D0569BC284E56A5007BC143 /* RecordListView.swift */,
+				5D0569BF284F6469007BC143 /* ProfileView.swift */,
+				5D5398BA2850C929000AABFD /* DiscountListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D0569C128500EDE007BC143 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5D5398B32850B3C4000AABFD /* DataStruct */,
+				5D0569C228500F19007BC143 /* MedilifeApiClient.swift */,
+				5D5398B82850C129000AABFD /* DiscountsViewModel.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5D5398B32850B3C4000AABFD /* DataStruct */ = {
+			isa = PBXGroup;
+			children = (
+				5D5398B42850B3D8000AABFD /* DiscountInfoResponse.swift */,
+				5D5398B62850B3ED000AABFD /* DiscountInfo.swift */,
+			);
+			path = DataStruct;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5D0569AA284E3C2E007BC143 /* Medilife */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D0569B9284E3C2F007BC143 /* Build configuration list for PBXNativeTarget "Medilife" */;
+			buildPhases = (
+				5D0569A7284E3C2E007BC143 /* Sources */,
+				5D0569A8284E3C2E007BC143 /* Frameworks */,
+				5D0569A9284E3C2E007BC143 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Medilife;
+			productName = Medilife;
+			productReference = 5D0569AB284E3C2E007BC143 /* Medilife.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5D0569A3284E3C2E007BC143 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					5D0569AA284E3C2E007BC143 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+				};
+			};
+			buildConfigurationList = 5D0569A6284E3C2E007BC143 /* Build configuration list for PBXProject "Medilife" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5D0569A2284E3C2E007BC143;
+			productRefGroup = 5D0569AC284E3C2E007BC143 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D0569AA284E3C2E007BC143 /* Medilife */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D0569A9284E3C2E007BC143 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0569B6284E3C2F007BC143 /* Preview Assets.xcassets in Resources */,
+				5D0569B3284E3C2F007BC143 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D0569A7284E3C2E007BC143 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0569C328500F19007BC143 /* MedilifeApiClient.swift in Sources */,
+				5D5398B52850B3D8000AABFD /* DiscountInfoResponse.swift in Sources */,
+				5D0569C0284F6469007BC143 /* ProfileView.swift in Sources */,
+				5D5398B92850C129000AABFD /* DiscountsViewModel.swift in Sources */,
+				5D0569B1284E3C2E007BC143 /* ContentView.swift in Sources */,
+				5D0569AF284E3C2E007BC143 /* MedilifeApp.swift in Sources */,
+				5D5398BB2850C929000AABFD /* DiscountListView.swift in Sources */,
+				5D5398B72850B3ED000AABFD /* DiscountInfo.swift in Sources */,
+				5D0569BD284E56A5007BC143 /* RecordListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5D0569B7284E3C2F007BC143 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5D0569B8284E3C2F007BC143 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D0569BA284E3C2F007BC143 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Medilife/Preview Content\"";
+				DEVELOPMENT_TEAM = 2URAB9B6R7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = virvar.code.Medilife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5D0569BB284E3C2F007BC143 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Medilife/Preview Content\"";
+				DEVELOPMENT_TEAM = 2URAB9B6R7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = virvar.code.Medilife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5D0569A6284E3C2E007BC143 /* Build configuration list for PBXProject "Medilife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D0569B7284E3C2F007BC143 /* Debug */,
+				5D0569B8284E3C2F007BC143 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D0569B9284E3C2F007BC143 /* Build configuration list for PBXNativeTarget "Medilife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D0569BA284E3C2F007BC143 /* Debug */,
+				5D0569BB284E3C2F007BC143 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5D0569A3284E3C2E007BC143 /* Project object */;
+}

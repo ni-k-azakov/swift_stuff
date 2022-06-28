@@ -1,0 +1,7 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '15.0'
+
+target 'WhichWay' do
+    use_frameworks!
+    pod 'UberRides', '~> 0.9'
+end
