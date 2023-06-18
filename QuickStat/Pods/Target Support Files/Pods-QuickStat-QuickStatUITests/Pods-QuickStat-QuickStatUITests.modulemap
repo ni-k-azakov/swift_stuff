@@ -1,0 +1,6 @@
+framework module Pods_QuickStat_QuickStatUITests {
+  umbrella header "Pods-QuickStat-QuickStatUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "sand_king_lg.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

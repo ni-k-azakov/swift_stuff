@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "crystal_maiden_lg.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

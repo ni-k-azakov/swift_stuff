@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "faceless_void_lg.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

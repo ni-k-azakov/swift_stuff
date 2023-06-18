@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "skywrath_mage_lg.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

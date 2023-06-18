@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "storm_spirit_lg.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

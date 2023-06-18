@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "riki_lg.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

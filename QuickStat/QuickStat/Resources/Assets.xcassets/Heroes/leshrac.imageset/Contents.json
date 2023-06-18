@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "leshrac_lg.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

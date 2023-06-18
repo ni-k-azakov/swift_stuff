@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "obsidian_destroyer_lg.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
