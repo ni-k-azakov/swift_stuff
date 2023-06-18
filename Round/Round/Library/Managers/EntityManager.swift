@@ -9,8 +9,8 @@ import Foundation
 import GameplayKit
 
 final class EntityManager<Entity> {
-    let enemyList: [Entity]
-    private let enemyRandomizer: GKRandomDistribution
+    private(set) var entityList: [Entity]
+    private let entityRandomizer: GKRandomDistribution
     private var xPositionRandomizer: GKRandomDistribution
     private var yPositionRandomizer: GKRandomDistribution
     private var stepMultiplier: CGFloat
@@ -24,8 +24,8 @@ final class EntityManager<Entity> {
         spawnBox field: CGRect = CGRect(origin: .zero, size: CGSize(width: 1, height: 1)),
         gridStep: CGFloat = 1
     ) {
-        self.enemyList = entities
-        self.enemyRandomizer = .init(forDieWithSideCount: enemyList.count)
+        self.entityList = entities
+        self.entityRandomizer = .init(forDieWithSideCount: entityList.count)
         self.stepMultiplier = gridStep > 0 ? 1 / gridStep : 1 / .leastNonzeroMagnitude
         self.xPositionRandomizer = .init(lowestValue: Int(field.minX * stepMultiplier), highestValue: Int(field.maxX * stepMultiplier))
         self.yPositionRandomizer = .init(lowestValue: Int(field.minY * stepMultiplier), highestValue: Int(field.maxY * stepMultiplier))
@@ -38,11 +38,19 @@ final class EntityManager<Entity> {
         return self
     }
     
-    func nextEnemy() -> Entity {
-        enemyList[enemyRandomizer.nextInt() - 1]
+    /// Updates `entityList` if new list has same size.
+    func setEntityListOfSameSize(_ entities: [Entity]) {
+        guard entities.count == entityList.count else { return }
+        entityList = entities
     }
     
-    /// Random enemy position in default spawnbox.
+    /// Random entity from collection.
+    func nextEntity() -> Entity {
+        if entityList.count == 1 { return entityList[0] }
+        return entityList[entityRandomizer.nextInt() - 1]
+    }
+    
+    /// Random entity position in default spawnbox.
     /// - Note: Has static alternative.
     func nextPosition() -> CGPoint {
         CGPoint(
@@ -51,7 +59,7 @@ final class EntityManager<Entity> {
         )
     }
     
-    /// Random enemy position in spawnbox.
+    /// Random entity position in spawnbox.
     /// - Parameter gridStep: Use numbers above 0. Default 1.
     static func nextPosition(inSpawnBox field: CGRect, gridStep: CGFloat = 1) -> CGPoint {
         let tempStepMult = gridStep > 0 ? 1 / gridStep : 1 / .leastNonzeroMagnitude

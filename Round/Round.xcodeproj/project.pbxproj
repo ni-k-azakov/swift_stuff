@@ -40,6 +40,8 @@
 		5D4BCDEC2A3E1E9600110D6C /* BoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDEB2A3E1E9600110D6C /* BoardController.swift */; };
 		5D4BCDEE2A3E27FE00110D6C /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDED2A3E27FE00110D6C /* PlayerController.swift */; };
 		5D4BCDF02A3F403900110D6C /* CGPoint+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDEF2A3F403900110D6C /* CGPoint+.swift */; };
+		5D4BCDF22A3F5D5600110D6C /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDF12A3F5D5600110D6C /* Enemy.swift */; };
+		5D4BCDF42A3F76FC00110D6C /* Roaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDF32A3F76FC00110D6C /* Roaster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		5D4BCDEB2A3E1E9600110D6C /* BoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardController.swift; sourceTree = "<group>"; };
 		5D4BCDED2A3E27FE00110D6C /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
 		5D4BCDEF2A3F403900110D6C /* CGPoint+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+.swift"; sourceTree = "<group>"; };
+		5D4BCDF12A3F5D5600110D6C /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		5D4BCDF32A3F76FC00110D6C /* Roaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roaster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				5D4BCDDA2A3BBA0000110D6C /* Arena.swift */,
+				5D4BCDF12A3F5D5600110D6C /* Enemy.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				5D4BCDE12A3BC90300110D6C /* LinkedList */,
+				5D4BCDF32A3F76FC00110D6C /* Roaster.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -474,12 +480,14 @@
 				5D4BCDE32A3BC90E00110D6C /* LinkedList.swift in Sources */,
 				5D4BCDDB2A3BBA0000110D6C /* Arena.swift in Sources */,
 				5D4BCDE02A3BC84B00110D6C /* Node.swift in Sources */,
+				5D4BCDF22A3F5D5600110D6C /* Enemy.swift in Sources */,
 				5D4BCDD02A3B432600110D6C /* EntityManager.swift in Sources */,
 				5D4BCDF02A3F403900110D6C /* CGPoint+.swift in Sources */,
 				5D4BCDEE2A3E27FE00110D6C /* PlayerController.swift in Sources */,
 				5D4BCDD62A3B7D8600110D6C /* CGPriority+.swift in Sources */,
 				5D4BCDE92A3D03F800110D6C /* SKSpriteNode.swift in Sources */,
 				5D4BCD802A3B007D00110D6C /* AppDelegate.swift in Sources */,
+				5D4BCDF42A3F76FC00110D6C /* Roaster.swift in Sources */,
 				5D4BCDD32A3B7B3E00110D6C /* AppConstants.swift in Sources */,
 				5D4BCDDD2A3BC30600110D6C /* ArenaManager.swift in Sources */,
 				5D4BCDE72A3CFC6000110D6C /* CGRect+.swift in Sources */,

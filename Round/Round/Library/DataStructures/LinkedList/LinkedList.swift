@@ -22,6 +22,18 @@ class LinkedList<T> {
         self.bookmark = node
     }
     
+    init?(data: [T]) {
+        guard data.count > 0 else { return nil }
+        let node = Node(data: data[0])
+        self.root = node
+        self.tail = node
+        self.bookmark = node
+        
+        for i in 1..<data.count {
+            self.pushBack(data[i])
+        }
+    }
+    
     @discardableResult func pushBack(_ data: T) -> Self {
         let node = Node(data: data)
         tail.next = node
@@ -51,6 +63,11 @@ class LinkedList<T> {
         } else {
             bookmark = root
         }
+        return bookmark.data
+    }
+    
+    @discardableResult func updateBookmarked(with newData: T) -> T {
+        bookmark.data = newData
         return bookmark.data
     }
 }

@@ -7,18 +7,15 @@
 
 import Foundation
 
-typealias RoasterLevels = (Int, Int, Int, Int)
 
 final class ArenaManager {
-    func generateArena(arenaLevel: Int, enemyLevels: RoasterLevels) -> Arena {
-        Arena(
-            background: arenaLevel,
-            enemies: EnemyRoaster(
-                Enemy(name: "1", level: enemyLevels.0, hp: 20, reward: 200),
-                nil,
-                nil,
-                nil
-            )
-        )
+    private var spawnBoxes: Roaster<CGRect> = Roaster(.zero, .zero, .zero, .zero)
+    
+    func generateArena(arenaLevel: Int) -> Arena {
+        Arena(level: arenaLevel, spawnBoxes: spawnBoxes)
+    }
+    
+    func setSpawnBoxes(_ spawnBoxes: Roaster<CGRect>) {
+        self.spawnBoxes = spawnBoxes
     }
 }
