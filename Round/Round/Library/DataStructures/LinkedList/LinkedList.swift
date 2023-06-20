@@ -57,6 +57,7 @@ class LinkedList<T> {
         return self
     }
     
+    
     @discardableResult func moveBookmark() -> T {
         if let next = bookmark.next {
             bookmark = next
@@ -69,5 +70,18 @@ class LinkedList<T> {
     @discardableResult func updateBookmarked(with newData: T) -> T {
         bookmark.data = newData
         return bookmark.data
+    }
+    
+    @discardableResult func resetBookmark() -> Self {
+        bookmark = root
+        return self
+    }
+    
+    func forEach(action: @escaping (T) -> Void) {
+        var node: Node<T>? = root
+        while let unwrapped = node {
+            action(unwrapped.data)
+            node = unwrapped.next
+        }
     }
 }

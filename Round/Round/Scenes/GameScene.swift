@@ -10,19 +10,13 @@ import GameplayKit
 
 final class GameScene: SKScene, SKPhysicsContactDelegate {
     // Paw army
-//    private let slashCategory: UInt32 = 0x1 << 0
     private var board: BoardController!
     private var player: PlayerController = PlayerController()
     
-//    private var swordHit: SKEmitterNode!
-    
     override func didMove(to view: SKView) {
-//        initWorld()
         initBoard()
         initAvatar()
         initPersona()
-        drawBoard()
-//        initOther()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -31,8 +25,6 @@ final class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         hit()
-        moveToNextTile()
-        spawnEnemies()
     }
 }
 
@@ -45,6 +37,12 @@ extension GameScene {
         board = BoardController(screenWidth: screenWidth, screenHeight: screenHeight)
         self.addChild(board.battleField)
         initSpawnBoxes()
+        
+        var node: Node<SKShapeNode>? = board.nodes.root
+        while let unwrapped = node {
+            replaceTile(nil, with: unwrapped.data)
+            node = unwrapped.next
+        }
     }
     
     private func initSpawnBoxes() {
@@ -60,7 +58,7 @@ extension GameScene {
     
     private func initAvatar() {
         player.initAvatar(in: CGRect(
-            origin: CGPoint(x: board.tiles.bookmark.data.x + board.tileSize.width / 2, y: board.tiles.bookmark.data.y + board.tileSize.height / 4),
+            origin: avatarPos(root: board.tiles.bookmark.data),
             size: board.tileSize / 2
         ))
         self.addChild(player.avatar)
@@ -73,63 +71,51 @@ extension GameScene {
         ))
         self.addChild(player.persona)
     }
+}
+
+// MARK: - Drawing
+extension GameScene {
+    private func replaceTile(_ tile: SKShapeNode?, with newTile: SKShapeNode) {
+        tile?.removeFromParent()
+        self.addChild(newTile)
+    }
     
-//    private func initOther() {
-//        swordHit = SKEmitterNode(fileNamed: "SwordHitParticle")
-//        swordHit.position = CGPoint(x: 0, y: -140)
-//        swordHit.advanceSimulationTime(2)
-//        swordHit.zPosition = AppConstants.Priority.PLAYER.particle
-//        self.addChild(swordHit)
-//    }
-    
-//    private func initWorld() {
-//        self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
-//        self.physicsWorld.contactDelegate = self
-//    }
+    private func resetArenas() {
+        board.updateArenas()
+        board.update()
+    }
 }
 
 // MARK: -
 extension GameScene {
+    private func avatarPos(root: CGPoint) -> CGPoint {
+        root + CGPoint(x: self.board.tileSize.width / 2, y: self.board.tileSize.height / 3)
+    }
+    
     private func moveToNextTile() {
-        var tile = board.tiles.bookmark.data
-        player.avatar.run(.move(
-            to: CGPoint(x: tile.x + board.tileSize.width / 2, y: tile.y + board.tileSize.height / 4),
-            duration: 0)
-        )
+        player.avatar.run(.move(to: avatarPos(root: board.tiles.bookmark.data), duration: 0))
+        player.avatar.run(.move(to: avatarPos(root: board.move().tiles.bookmark.data), duration: 0.15))
         
-        tile = board.tiles.moveBookmark()
-        board.arenas.moveBookmark()
-        board.nodes.moveBookmark()
-        
-        player.avatar.run(.move(
-            to: CGPoint(x: tile.x + board.tileSize.width / 2, y: tile.y + board.tileSize.height / 4),
-            duration: 0.15)
-        )
+        if board.tiles.bookmark === board.tiles.root { resetArenas() }
+        spawnEnemies()
     }
     
     private func spawnEnemies() {
-        board.updateRoaster()
-        board.enemyRoaster.forEach { [weak self] enemy in
+        board.updateRoster()
+        board.enemyRoster.forEach { [weak self] enemy in
             if let enemy, let self { self.addChild(enemy) }
         }
     }
     
     private func hit() {
-        board.dealDamage(5) // TODO: damage
-        redrawTile(board.nodes.bookmark.data, with: board.rebuildCurrentNode())
-    }
-    
-    private func drawBoard() {
-        var node: Node<SKShapeNode>? = board.nodes.root
-        while let unwrapped = node {
-            redrawTile(nil, with: unwrapped.data)
-            node = unwrapped.next
+        player.dealDamage(5)
+        
+        if player.dealtDamage > board.arenas.bookmark.data.roster.map { $0?.0 ?? Enemy.dummy() }.max(\.maxHP) {
+            board.wipeEnemies()
+            board.redrawCurrentNode()
+            moveToNextTile()
+            player.resetDamage()
         }
-    }
-    
-    private func redrawTile(_ tile: SKShapeNode?, with newTile: SKShapeNode) {
-        tile?.removeFromParent()
-        self.addChild(newTile)
     }
 }
 

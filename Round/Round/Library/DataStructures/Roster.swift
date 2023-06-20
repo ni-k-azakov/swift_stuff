@@ -1,5 +1,5 @@
 //
-//  Roaster.swift
+//  Roster.swift
 //  Round
 //
 //  Created by Nikita Kazakov on 18.06.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Roaster<T> {
+struct Roster<T> {
     var first: T
     var second: T
     var third: T
@@ -56,7 +56,33 @@ struct Roaster<T> {
         action(fourth)
     }
     
-    func map<Out>(action: @escaping (T) -> Out) -> Roaster<Out> {
-        Roaster<Out>(action(first), action(second), action(third), action(fourth))
+    func countIf(action: @escaping (T) -> Bool) -> Int {
+        var amount = 0
+        amount += action(first) ? 1 : 0
+        amount += action(second) ? 1 : 0
+        amount += action(third) ? 1 : 0
+        amount += action(fourth) ? 1 : 0
+        return amount
+    }
+    
+    func countIf(action: @escaping (T, Int) -> Bool) -> Int {
+        var amount = 0
+        amount += action(first, 0) ? 1 : 0
+        amount += action(second, 1) ? 1 : 0
+        amount += action(third, 2) ? 1 : 0
+        amount += action(fourth, 3) ? 1 : 0
+        return amount
+    }
+    
+    func map<Out>(action: @escaping (T) -> Out) -> Roster<Out> {
+        Roster<Out>(action(first), action(second), action(third), action(fourth))
+    }
+    
+    func map<Out>(action: @escaping (T, Int) -> Out) -> Roster<Out> {
+        Roster<Out>(action(first, 0), action(second, 1), action(third, 2), action(fourth, 3))
+    }
+    
+    func max<Out>(_ keyPath: KeyPath<T, Out>) -> Out where Out: Comparable {
+        return Swift.max(first[keyPath: keyPath], second[keyPath: keyPath], third[keyPath: keyPath], fourth[keyPath: keyPath])
     }
 }

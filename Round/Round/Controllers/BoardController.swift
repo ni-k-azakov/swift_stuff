@@ -23,9 +23,10 @@ final class BoardController {
     
     var tiles: LinkedList<CGPoint>!
     var arenas: LinkedList<Arena>!
+    var configs: LinkedList<ArenaConfig>!
     var nodes: LinkedList<SKShapeNode>!
     
-    var enemyRoaster: Roaster<SKSpriteNode?> = Roaster(nil, nil, nil, nil)
+    var enemyRoster: Roster<SKSpriteNode?> = Roster(nil, nil, nil, nil)
     
     init(screenWidth: CGFloat, screenHeight: CGFloat) {
         initBoard(screenWidth: screenWidth, screenHeight: screenHeight)
@@ -92,15 +93,26 @@ final class BoardController {
         ]
         
         fillTiles()
+        fillConfigs()
         updateArenas()
         buildNodes()
     }
 }
 
 extension BoardController {
+    func update() {
+        var node: Node<SKShapeNode>? = nodes.root
+        var arenaNode: Node<Arena>? = arenas.root
+        while let unwrapped = node, let arena = arenaNode  {
+            updateNode(unwrapped.data, with: arena.data)
+            node = unwrapped.next
+            arenaNode = arena.next
+        }
+    }
+    
     func setSpawnBoxes(in root: CGRect) {
         arenaManager.setSpawnBoxes(
-            Roaster(
+            Roster(
                 root * CGSize(width: 0.5, height: 2 / 3) + CGPoint(x: root.width / 4, y: 0),
                 root * CGSize(width: 0.5, height: 1 / 3) + CGPoint(x: root.width / 4, y: root.height * 2 / 3),
                 root / CGSize(width: 4, height: 1),
@@ -111,23 +123,23 @@ extension BoardController {
         updateArenas()
     }
     
-    func updateRoaster() {
-        enemyRoaster.forEach { $0?.removeFromParent() }
-        arenas.bookmark.data.updateRoaster()
-        enemyRoaster = arenas.bookmark.data.roaster.map { [weak self] in
+    func updateRoster() {
+        enemyRoster.forEach { $0?.removeFromParent() }
+        arenas.bookmark.data.updateRoster()
+        enemyRoster = arenas.bookmark.data.roster.map { [weak self] in
             guard let enemyInfo = $0, let self else { return nil }
             return createEnemy(enemy: enemyInfo.0, at: enemyInfo.1, ofSize: self.tileSize / 1.5)
         }
         setEnemiesPerspective()
     }
     
-    func dealDamage(_ damage: UInt) {
-        arenas.bookmark.data.dealDamage(damage: damage)
+    func wipeEnemies() {
+        arenas.bookmark.data.wipeEnemies()
     }
     
     func buildNode(tile: CGPoint, arena: Arena) -> SKShapeNode {
         let tileNode = SKShapeNode(rect: CGRect(origin: tile, size: tileSize))
-        if arena.roaster.first != nil || arena.roaster.second != nil || arena.roaster.third != nil || arena.roaster.fourth != nil {
+        if arena.roster.first != nil || arena.roster.second != nil || arena.roster.third != nil || arena.roster.fourth != nil {
             tileNode.fillColor = .systemGreen
         } else {
             tileNode.fillColor = .systemRed
@@ -144,8 +156,20 @@ extension BoardController {
         return tileNode
     }
     
+    func updateNode(_ node: SKShapeNode, with arena: Arena) {
+        if arena.roster.first != nil || arena.roster.second != nil || arena.roster.third != nil || arena.roster.fourth != nil {
+            node.fillColor = .systemGreen
+        } else {
+            node.fillColor = .systemRed
+        }
+    }
+    
     func rebuildCurrentNode() -> SKShapeNode {
         nodes.updateBookmarked(with: buildNode(tile: tiles.bookmark.data, arena: arenas.bookmark.data))
+    }
+    
+    func redrawCurrentNode() {
+        updateNode(nodes.bookmark.data, with: arenas.bookmark.data)
     }
     
     func buildNodes() {
@@ -165,8 +189,34 @@ extension BoardController {
         nodes = LinkedList(data: newNodes)
     }
     
+    func updateArenas() {
+        configs.resetBookmark()
+        arenas = LinkedList(
+            data: [
+                arenaManager.generateArenaFrom(config: configs.root.data),
+                arenaManager.generateArenaFrom(config: configs.moveBookmark()),
+                arenaManager.generateArenaFrom(config: configs.moveBookmark()),
+                arenaManager.generateArenaFrom(config: configs.moveBookmark()),
+                arenaManager.generateArenaFrom(config: configs.moveBookmark()),
+                arenaManager.generateArenaFrom(config: configs.moveBookmark()),
+                arenaManager.generateArenaFrom(config: configs.moveBookmark()),
+                arenaManager.generateArenaFrom(config: configs.moveBookmark()),
+                arenaManager.generateArenaFrom(config: configs.moveBookmark()),
+                arenaManager.generateArenaFrom(config: configs.moveBookmark())
+            ]
+        )
+    }
+    
+    @discardableResult func move() -> Self {
+        tiles.moveBookmark()
+        arenas.moveBookmark()
+        nodes.moveBookmark()
+        return self
+    }
+
     private func fillTiles() {
-        tiles = LinkedList(data: corners[1]).pushBack([
+        tiles = LinkedList(data: [
+            corners[1],
             horizontals[1],
             corners[2],
             verticals[2],
@@ -179,21 +229,21 @@ extension BoardController {
         ])
     }
     
-    private func updateArenas() {
-        arenas = LinkedList(data: (
-               arenaManager.generateArena(arenaLevel: 1)
-            )
-        ).pushBack([
-            arenaManager.generateArena(arenaLevel: 2),
-            arenaManager.generateArena(arenaLevel: 3),
-            arenaManager.generateArena(arenaLevel: 4),
-            arenaManager.generateArena(arenaLevel: 5),
-            arenaManager.generateArena(arenaLevel: 6),
-            arenaManager.generateArena(arenaLevel: 7),
-            arenaManager.generateArena(arenaLevel: 8),
-            arenaManager.generateArena(arenaLevel: 9),
-            arenaManager.generateArena(arenaLevel: 10)
-        ])
+    private func fillConfigs() {
+        configs = LinkedList(
+            data: [
+                ArenaConfig(level: 1, enemyLevels: Roster(nil, nil, nil, nil)),
+                ArenaConfig(level: 2, enemyLevels: Roster(1, 1, 1, 1)),
+                ArenaConfig(level: 3, enemyLevels: Roster(1, 2, 0, 1)),
+                ArenaConfig(level: 4, enemyLevels: Roster(0, 0, 2, 0)),
+                ArenaConfig(level: 5, enemyLevels: Roster(2, 2, 2, 2)),
+                ArenaConfig(level: 6, enemyLevels: Roster(1, 1, 1, 1)),
+                ArenaConfig(level: 7, enemyLevels: Roster(0, 1, 1, 1)),
+                ArenaConfig(level: 8, enemyLevels: Roster(1, 0, 0, 2)),
+                ArenaConfig(level: 9, enemyLevels: Roster(1, 0, 1, 2)),
+                ArenaConfig(level: 10, enemyLevels: Roster(1, 2, 2, 1))
+            ]
+        )
     }
     
     private func createEnemy(enemy: Enemy, at point: CGPoint, ofSize size: CGSize) -> SKSpriteNode {
@@ -205,12 +255,10 @@ extension BoardController {
     }
     
     private func setEnemiesPerspective() {
-        let roasterSequence = [enemyRoaster[0], enemyRoaster[1], enemyRoaster[2], enemyRoaster[3]]
-        
-        enemyRoaster.forEach { enemy, index in
-            guard let enemy else { return }
+        enemyRoster.forEach { [weak self] enemy, index in
+            guard let enemy, let self else { return }
             enemy.zPosition = AppConstants.Priority.ENEMY.moveFront(
-                UInt(roasterSequence.filter { (enemy.frame.minY) > ($0?.frame.minY ?? 0) }.count)
+                UInt(self.enemyRoster.countIf { (enemy.frame.minY) < ($0?.frame.minY ?? 0) })
             )
         }
     }

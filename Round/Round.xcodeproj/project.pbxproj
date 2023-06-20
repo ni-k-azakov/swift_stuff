@@ -41,7 +41,8 @@
 		5D4BCDEE2A3E27FE00110D6C /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDED2A3E27FE00110D6C /* PlayerController.swift */; };
 		5D4BCDF02A3F403900110D6C /* CGPoint+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDEF2A3F403900110D6C /* CGPoint+.swift */; };
 		5D4BCDF22A3F5D5600110D6C /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDF12A3F5D5600110D6C /* Enemy.swift */; };
-		5D4BCDF42A3F76FC00110D6C /* Roaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDF32A3F76FC00110D6C /* Roaster.swift */; };
+		5D4BCDF42A3F76FC00110D6C /* Roster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDF32A3F76FC00110D6C /* Roster.swift */; };
+		5D4BCDF62A40768000110D6C /* ArenaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDF52A40768000110D6C /* ArenaConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +100,8 @@
 		5D4BCDED2A3E27FE00110D6C /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
 		5D4BCDEF2A3F403900110D6C /* CGPoint+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+.swift"; sourceTree = "<group>"; };
 		5D4BCDF12A3F5D5600110D6C /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
-		5D4BCDF32A3F76FC00110D6C /* Roaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roaster.swift; sourceTree = "<group>"; };
+		5D4BCDF32A3F76FC00110D6C /* Roster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roster.swift; sourceTree = "<group>"; };
+		5D4BCDF52A40768000110D6C /* ArenaConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 			children = (
 				5D4BCDDA2A3BBA0000110D6C /* Arena.swift */,
 				5D4BCDF12A3F5D5600110D6C /* Enemy.swift */,
+				5D4BCDF52A40768000110D6C /* ArenaConfig.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,7 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				5D4BCDE12A3BC90300110D6C /* LinkedList */,
-				5D4BCDF32A3F76FC00110D6C /* Roaster.swift */,
+				5D4BCDF32A3F76FC00110D6C /* Roster.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D4BCDF62A40768000110D6C /* ArenaConfig.swift in Sources */,
 				5D4BCD862A3B007D00110D6C /* GameScene.swift in Sources */,
 				5D4BCD882A3B007D00110D6C /* GameViewController.swift in Sources */,
 				5D4BCDEC2A3E1E9600110D6C /* BoardController.swift in Sources */,
@@ -487,7 +491,7 @@
 				5D4BCDD62A3B7D8600110D6C /* CGPriority+.swift in Sources */,
 				5D4BCDE92A3D03F800110D6C /* SKSpriteNode.swift in Sources */,
 				5D4BCD802A3B007D00110D6C /* AppDelegate.swift in Sources */,
-				5D4BCDF42A3F76FC00110D6C /* Roaster.swift in Sources */,
+				5D4BCDF42A3F76FC00110D6C /* Roster.swift in Sources */,
 				5D4BCDD32A3B7B3E00110D6C /* AppConstants.swift in Sources */,
 				5D4BCDDD2A3BC30600110D6C /* ArenaManager.swift in Sources */,
 				5D4BCDE72A3CFC6000110D6C /* CGRect+.swift in Sources */,

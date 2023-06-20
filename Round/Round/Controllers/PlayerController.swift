@@ -11,6 +11,7 @@ import SpriteKit
 final class PlayerController {
     var avatar: SKSpriteNode!
     var persona: SKSpriteNode!
+    private(set) var dealtDamage: UInt = 0
     
     func initPersona(in frame: CGRect) {
         persona = SKSpriteNode(imageNamed: "catWarrior")
@@ -24,5 +25,13 @@ final class PlayerController {
         avatar.zPosition = AppConstants.Priority.PLAYER
         avatar.aspectFitTo(size: frame.size)
         avatar.position = frame.origin
+    }
+    
+    func dealDamage(_ amount: UInt) {
+        dealtDamage += amount
+    }
+    
+    func resetDamage() {
+        dealtDamage = 0
     }
 }

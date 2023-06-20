@@ -7,38 +7,53 @@
 
 import Foundation
 
-typealias EnemyDispenser = EntityManager<Enemy>
+typealias EnemyDispenser = EntityManager<Enemy?>
 
 final class Arena {
-    let background: Int
-    private(set) var roaster: Roaster<(Enemy, CGPoint)?> = Roaster(nil, nil, nil, nil)
+    let background: UInt
+    private(set) var roster: Roster<(Enemy, CGPoint)?> = Roster(nil, nil, nil, nil)
+    private let dispencers: Roster<EnemyDispenser>
     
-    private let dispencers: Roaster<EnemyDispenser> = Roaster(
-        EnemyDispenser(entities: [Enemy(image: "slime", name: "slime", level: 1, maxHP: 100, reward: 50)]),
-        EnemyDispenser(entities: [Enemy(image: "slime2", name: "slime", level: 1, maxHP: 100, reward: 50)]),
-        EnemyDispenser(entities: [Enemy(image: "slime", name: "slime", level: 1, maxHP: 100, reward: 50)]),
-        EnemyDispenser(entities: [Enemy(image: "slime", name: "slime", level: 1, maxHP: 100, reward: 50),])
-    )
-    
-    init(level: Int, spawnBoxes: Roaster<CGRect>) {
+    init(level: UInt, enemyLevels: Roster<UInt8?>, spawnBoxes: Roster<CGRect>) {
         self.background = level
+        
+        dispencers = enemyLevels.map { level, index in
+            // TODO: todo
+            if level == 1 {
+                return EnemyDispenser(
+                    entities: [Enemy(image: "slime", name: "slime", level: 1, maxHP: 100, reward: 50)],
+                    spawnBox: spawnBoxes[index]
+                )
+            } else if level == 2 {
+                return EnemyDispenser(
+                    entities: [Enemy(image: "slime2", name: "slime", level: 1, maxHP: 200, reward: 100)],
+                    spawnBox: spawnBoxes[index]
+                )
+            } else {
+                return EnemyDispenser(entities: [nil], spawnBox: spawnBoxes[index])
+            }
+        }
+        
+        updateRoster()
+    }
+    
+    func setSpawnBoxes(spawnBoxes: Roster<CGRect>) {
         dispencers.forEach { dispencer, index in
             dispencer.set(newSpawnBox: spawnBoxes[index])
         }
-        updateRoaster()
     }
     
-    func setSpawnBoxes(spawnBoxes: Roaster<CGRect>) {
-        dispencers.forEach { dispencer, index in
-            dispencer.set(newSpawnBox: spawnBoxes[index])
+    func updateRoster() {
+        roster = dispencers.map {
+            if let entity = $0.nextEntity() {
+                return (entity, $0.nextPosition())
+            } else {
+                return nil
+            }
         }
     }
     
-    func updateRoaster() {
-        roaster = dispencers.map { ($0.nextEntity(), $0.nextPosition()) }
-    }
-    func dealDamage(damage: UInt) {
-        // TODO: todo
-        roaster = Roaster(nil, nil, nil, nil)
+    func wipeEnemies() {
+        roster = Roster(nil, nil, nil, nil)
     }
 }

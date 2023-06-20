@@ -9,13 +9,13 @@ import Foundation
 
 
 final class ArenaManager {
-    private var spawnBoxes: Roaster<CGRect> = Roaster(.zero, .zero, .zero, .zero)
+    private var spawnBoxes: Roster<CGRect> = Roster(.zero, .zero, .zero, .zero)
     
-    func generateArena(arenaLevel: Int) -> Arena {
-        Arena(level: arenaLevel, spawnBoxes: spawnBoxes)
+    func generateArenaFrom(config: ArenaConfig) -> Arena {
+        Arena(level: config.level, enemyLevels: config.enemyLevels, spawnBoxes: spawnBoxes)
     }
     
-    func setSpawnBoxes(_ spawnBoxes: Roaster<CGRect>) {
+    func setSpawnBoxes(_ spawnBoxes: Roster<CGRect>) {
         self.spawnBoxes = spawnBoxes
     }
 }
