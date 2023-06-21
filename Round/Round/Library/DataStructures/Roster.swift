@@ -85,4 +85,8 @@ struct Roster<T> {
     func max<Out>(_ keyPath: KeyPath<T, Out>) -> Out where Out: Comparable {
         return Swift.max(first[keyPath: keyPath], second[keyPath: keyPath], third[keyPath: keyPath], fourth[keyPath: keyPath])
     }
+    
+    func sum<Out>(action: @escaping (T) -> Out) -> Out where Out: Numeric {
+        return action(first) + action(second) + action(third) + action(fourth)
+    }
 }

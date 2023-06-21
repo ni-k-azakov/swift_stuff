@@ -43,6 +43,9 @@
 		5D4BCDF22A3F5D5600110D6C /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDF12A3F5D5600110D6C /* Enemy.swift */; };
 		5D4BCDF42A3F76FC00110D6C /* Roster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDF32A3F76FC00110D6C /* Roster.swift */; };
 		5D4BCDF62A40768000110D6C /* ArenaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDF52A40768000110D6C /* ArenaConfig.swift */; };
+		5D4BCDF82A42154400110D6C /* Enemies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDF72A42154400110D6C /* Enemies.swift */; };
+		5D4BCDFB2A42157900110D6C /* Priorities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDFA2A42157900110D6C /* Priorities.swift */; };
+		5D4BCDFD2A4216F700110D6C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BCDFC2A4216F700110D6C /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +105,9 @@
 		5D4BCDF12A3F5D5600110D6C /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		5D4BCDF32A3F76FC00110D6C /* Roster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roster.swift; sourceTree = "<group>"; };
 		5D4BCDF52A40768000110D6C /* ArenaConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaConfig.swift; sourceTree = "<group>"; };
+		5D4BCDF72A42154400110D6C /* Enemies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemies.swift; sourceTree = "<group>"; };
+		5D4BCDFA2A42157900110D6C /* Priorities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priorities.swift; sourceTree = "<group>"; };
+		5D4BCDFC2A4216F700110D6C /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +220,7 @@
 				5D4BCDCC2A3B24ED00110D6C /* Animations */,
 				5D4BCDB72A3B218C00110D6C /* Sounds */,
 				5D4BCD8C2A3B007F00110D6C /* Assets.xcassets */,
+				5D4BCDFC2A4216F700110D6C /* Images.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -280,7 +287,7 @@
 			children = (
 				5D4BCD7F2A3B007D00110D6C /* AppDelegate.swift */,
 				5D4BCD832A3B007D00110D6C /* Actions.sks */,
-				5D4BCDD22A3B7B3E00110D6C /* AppConstants.swift */,
+				5D4BCDF92A42154800110D6C /* AppConstants */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -332,6 +339,16 @@
 				5D4BCDED2A3E27FE00110D6C /* PlayerController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5D4BCDF92A42154800110D6C /* AppConstants */ = {
+			isa = PBXGroup;
+			children = (
+				5D4BCDD22A3B7B3E00110D6C /* AppConstants.swift */,
+				5D4BCDFA2A42157900110D6C /* Priorities.swift */,
+				5D4BCDF72A42154400110D6C /* Enemies.swift */,
+			);
+			path = AppConstants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,13 +496,16 @@
 				5D4BCDF62A40768000110D6C /* ArenaConfig.swift in Sources */,
 				5D4BCD862A3B007D00110D6C /* GameScene.swift in Sources */,
 				5D4BCD882A3B007D00110D6C /* GameViewController.swift in Sources */,
+				5D4BCDFD2A4216F700110D6C /* Images.swift in Sources */,
 				5D4BCDEC2A3E1E9600110D6C /* BoardController.swift in Sources */,
 				5D4BCDE52A3CF8BA00110D6C /* CGSize+.swift in Sources */,
 				5D4BCDE32A3BC90E00110D6C /* LinkedList.swift in Sources */,
 				5D4BCDDB2A3BBA0000110D6C /* Arena.swift in Sources */,
+				5D4BCDFB2A42157900110D6C /* Priorities.swift in Sources */,
 				5D4BCDE02A3BC84B00110D6C /* Node.swift in Sources */,
 				5D4BCDF22A3F5D5600110D6C /* Enemy.swift in Sources */,
 				5D4BCDD02A3B432600110D6C /* EntityManager.swift in Sources */,
+				5D4BCDF82A42154400110D6C /* Enemies.swift in Sources */,
 				5D4BCDF02A3F403900110D6C /* CGPoint+.swift in Sources */,
 				5D4BCDEE2A3E27FE00110D6C /* PlayerController.swift in Sources */,
 				5D4BCDD62A3B7D8600110D6C /* CGPriority+.swift in Sources */,

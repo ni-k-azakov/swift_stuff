@@ -123,7 +123,7 @@ extension BoardController {
         updateArenas()
     }
     
-    func updateRoster() {
+    func updateRoster() -> Roster<SKSpriteNode?> {
         enemyRoster.forEach { $0?.removeFromParent() }
         arenas.bookmark.data.updateRoster()
         enemyRoster = arenas.bookmark.data.roster.map { [weak self] in
@@ -131,6 +131,7 @@ extension BoardController {
             return createEnemy(enemy: enemyInfo.0, at: enemyInfo.1, ofSize: self.tileSize / 1.5)
         }
         setEnemiesPerspective()
+        return enemyRoster
     }
     
     func wipeEnemies() {
@@ -214,6 +215,10 @@ extension BoardController {
         return self
     }
 
+    func getReward() -> Double {
+        arenas.bookmark.data.roster.sum { $0?.0.reward ?? 0 }
+    }
+    
     private func fillTiles() {
         tiles = LinkedList(data: [
             corners[1],
@@ -233,15 +238,15 @@ extension BoardController {
         configs = LinkedList(
             data: [
                 ArenaConfig(level: 1, enemyLevels: Roster(nil, nil, nil, nil)),
-                ArenaConfig(level: 2, enemyLevels: Roster(1, 1, 1, 1)),
+                ArenaConfig(level: 2, enemyLevels: Roster(1, 4, 1, 1)),
                 ArenaConfig(level: 3, enemyLevels: Roster(1, 2, 0, 1)),
                 ArenaConfig(level: 4, enemyLevels: Roster(0, 0, 2, 0)),
                 ArenaConfig(level: 5, enemyLevels: Roster(2, 2, 2, 2)),
-                ArenaConfig(level: 6, enemyLevels: Roster(1, 1, 1, 1)),
-                ArenaConfig(level: 7, enemyLevels: Roster(0, 1, 1, 1)),
-                ArenaConfig(level: 8, enemyLevels: Roster(1, 0, 0, 2)),
-                ArenaConfig(level: 9, enemyLevels: Roster(1, 0, 1, 2)),
-                ArenaConfig(level: 10, enemyLevels: Roster(1, 2, 2, 1))
+                ArenaConfig(level: 6, enemyLevels: Roster(1, 3, 1, 1)),
+                ArenaConfig(level: 7, enemyLevels: Roster(0, 4, 4, 1)),
+                ArenaConfig(level: 8, enemyLevels: Roster(1, 0, 3, 2)),
+                ArenaConfig(level: 9, enemyLevels: Roster(1, 1, 1, 2)),
+                ArenaConfig(level: 10, enemyLevels: Roster(1, 3, 2, 0))
             ]
         )
     }

@@ -12,7 +12,7 @@ struct Enemy {
     let name: String
     let level: UInt8
     let maxHP: Int
-    let reward: UInt
+    let reward: Double
     
     static func dummy() -> Self {
         Enemy(image: "", name: "", level: 0, maxHP: 0, reward: 0)

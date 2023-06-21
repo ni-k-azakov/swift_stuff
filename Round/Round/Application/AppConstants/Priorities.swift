@@ -1,17 +1,13 @@
 //
-//  AppConstants.swift
+//  Priorities.swift
 //  Round
 //
-//  Created by Nikita Kazakov on 15.06.2023.
+//  Created by Nikita Kazakov on 20.06.2023.
 //
 
 import Foundation
 
-typealias CGPriority = CGFloat
-
-struct AppConstants {
-    private init() {}
-    
+extension AppConstants {
     struct Priority {
         private init() {}
         

@@ -13,14 +13,22 @@ final class GameScene: SKScene, SKPhysicsContactDelegate {
     private var board: BoardController!
     private var player: PlayerController = PlayerController()
     
+    var networthLabel: SKLabelNode!
+    var shownNetworth: Double = 0 {
+        didSet(newValue) {
+            networthLabel.text = String(UInt64(newValue))
+        }
+    }
+    
     override func didMove(to view: SKView) {
         initBoard()
         initAvatar()
         initPersona()
+        initUI()
     }
     
     override func update(_ currentTime: TimeInterval) {
-        
+        shownNetworth = shownNetworth + min(player.networth - shownNetworth, 9)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -71,6 +79,15 @@ extension GameScene {
         ))
         self.addChild(player.persona)
     }
+    
+    private func initUI() {
+        let screenHeight = self.frame.height
+        
+        networthLabel = SKLabelNode(text: "0")
+        networthLabel.position = CGPoint(x: 0, y: screenHeight / 3)
+        
+        self.addChild(networthLabel)
+    }
 }
 
 // MARK: - Drawing
@@ -101,16 +118,17 @@ extension GameScene {
     }
     
     private func spawnEnemies() {
-        board.updateRoster()
-        board.enemyRoster.forEach { [weak self] enemy in
+        board.updateRoster().forEach { [weak self] enemy in
             if let enemy, let self { self.addChild(enemy) }
         }
     }
     
     private func hit() {
-        player.dealDamage(5)
+        player.dealDamage()
+        player.collectMoney(1)
         
-        if player.dealtDamage > board.arenas.bookmark.data.roster.map { $0?.0 ?? Enemy.dummy() }.max(\.maxHP) {
+        if player.dealtDamage >= board.arenas.bookmark.data.roster.map(action: { $0?.0 ?? Enemy.dummy() }).max(\.maxHP) {
+            player.collectMoney(board.getReward())
             board.wipeEnemies()
             board.redrawCurrentNode()
             moveToNextTile()

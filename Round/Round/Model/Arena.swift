@@ -19,19 +19,11 @@ final class Arena {
         
         dispencers = enemyLevels.map { level, index in
             // TODO: todo
-            if level == 1 {
-                return EnemyDispenser(
-                    entities: [Enemy(image: "slime", name: "slime", level: 1, maxHP: 100, reward: 50)],
-                    spawnBox: spawnBoxes[index]
-                )
-            } else if level == 2 {
-                return EnemyDispenser(
-                    entities: [Enemy(image: "slime2", name: "slime", level: 1, maxHP: 200, reward: 100)],
-                    spawnBox: spawnBoxes[index]
-                )
-            } else {
-                return EnemyDispenser(entities: [nil], spawnBox: spawnBoxes[index])
-            }
+            guard let level else { return EnemyDispenser(entities: [nil]) }
+            return EnemyDispenser(
+                entities: [AppConstants.Enemies.getFor(arenaLevel: level)],
+                spawnBox: spawnBoxes[index]
+            )
         }
         
         updateRoster()
