@@ -15,19 +15,19 @@ extension SKSpriteNode {
         self.size = texture.size()
 
         let verticalRatio = fillSize.height / texture.size().height
-        let horizontalRatio = fillSize.width /  texture.size().width
-
-        self.setScale(horizontalRatio > verticalRatio ? horizontalRatio : verticalRatio)
+        let horizontalRatio = fillSize.width / texture.size().width
+        let ratio = horizontalRatio > verticalRatio ? horizontalRatio : verticalRatio
+        self.scale(to: CGSize(width: size.width * ratio, height: size.height * ratio))
     }
     
-    func aspectFitTo(size fillSize: CGSize) {
+    func aspectFitTo(size fitSize: CGSize) {
         guard let texture else { return }
         
         self.size = texture.size()
-
-        let verticalRatio = fillSize.height / texture.size().height
-        let horizontalRatio = fillSize.width /  texture.size().width
-
-        self.setScale(horizontalRatio > verticalRatio ? verticalRatio : horizontalRatio)
+        
+        let verticalRatio = fitSize.height / texture.size().height
+        let horizontalRatio = fitSize.width / texture.size().width
+        let ratio = horizontalRatio > verticalRatio ? verticalRatio : horizontalRatio
+        self.scale(to: CGSize(width: size.width * ratio, height: size.height * ratio))
     }
 }

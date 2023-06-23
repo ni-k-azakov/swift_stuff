@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias EnemyDispenser = EntityManager<Enemy?>
+typealias EnemyDispenser = EntityDispencer<Enemy?>
 
 final class Arena {
     let background: UInt

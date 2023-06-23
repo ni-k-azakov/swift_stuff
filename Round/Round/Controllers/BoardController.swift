@@ -14,33 +14,36 @@ final class BoardController {
     
     var tileSize: CGSize!
     var innerField: CGRect!
-    var battleField: SKShapeNode!
-    
-    var corners: [CGPoint] = []
-    var horizontals: [CGPoint] = []
-    var verticals: [CGPoint] = []
-    
+    var battleField: SKSpriteNode!
     
     var tiles: LinkedList<CGPoint>!
     var arenas: LinkedList<Arena>!
     var configs: LinkedList<ArenaConfig>!
-    var nodes: LinkedList<SKShapeNode>!
+    var nodes: LinkedList<SKSpriteNode>!
     
-    var enemyRoster: Roster<SKSpriteNode?> = Roster(nil, nil, nil, nil)
+    var enemyRoster: Roster<SKSpriteNode>!
+    
+    var currentRunNetworth: Double = 0
+    
+    private var corners: [CGPoint] = []
+    private var horizontals: [CGPoint] = []
+    private var verticals: [CGPoint] = []
     
     init(screenWidth: CGFloat, screenHeight: CGFloat) {
         initBoard(screenWidth: screenWidth, screenHeight: screenHeight)
         initBattleField()
+        initEnemyRoster()
     }
     
     private func initBattleField() {
-        battleField = SKShapeNode(rect: innerField)
-        battleField.fillColor = .systemRed
+        battleField = SKSpriteNode(imageNamed: "field")
+        battleField.position = innerField.center
+        battleField.size = innerField.size
         battleField.zPosition = AppConstants.Priority.BACKGROUND
     }
     
     private func initBoard(screenWidth: CGFloat, screenHeight: CGFloat) {
-        tileSize = CGSize(width: screenWidth / 4, height: screenWidth / 4)
+        self.tileSize = CGSize(width: screenWidth / 4, height: screenWidth / 4)
         
         let verticalTileSize = CGSize(width: screenWidth / 4, height: screenHeight / 5)
         let horizontalTileSize = CGSize(width: screenWidth / 2.5, height: screenWidth / 4)
@@ -54,41 +57,46 @@ final class BoardController {
         
         corners = [
             CGPoint(
-                x: -tileSize.width - horizontalTileSize.width / 2,
-                y: verticalTileSize.height
+                x: -(tileSize + horizontalTileSize).width / 2,
+                y: (verticalTileSize + tileSize / 2).height
             ),
             CGPoint(
-                x: -tileSize.width - horizontalTileSize.width / 2,
-                y: -verticalTileSize.height - tileSize.height
+                x: -(tileSize + horizontalTileSize).width / 2,
+                y: -(verticalTileSize + tileSize / 2).height
             ),
             CGPoint(
-                x: horizontalTileSize.width / 2,
-                y: -verticalTileSize.height - tileSize.height
+                x: (horizontalTileSize + tileSize).width / 2,
+                y: -(verticalTileSize + tileSize / 2).height
             ),
-            CGPoint(x: horizontalTileSize.width / 2, y: verticalTileSize.height)
+            CGPoint(
+                x: (horizontalTileSize + tileSize).width / 2,
+                y: (verticalTileSize + tileSize / 2).height
+            )
         ]
         
         horizontals = [
-            CGPoint(x: -tileSize.width / 2, y: verticalTileSize.height),
-            CGPoint(x: -tileSize.width / 2, y: -verticalTileSize.height - tileSize.height)
+            CGPoint(x: 0, y: (verticalTileSize + tileSize / 2).height),
+            CGPoint(x: 0, y: -(verticalTileSize + tileSize / 2).height)
         ]
+        
+        let vertY = (verticalTileSize - tileSize).height * 2 / 6 + tileSize.height / 2
         
         verticals = [
             CGPoint(
-                x: -tileSize.width - horizontalTileSize.width / 2,
-                y: (verticalTileSize.height - tileSize.height) * 2 / 6
+                x: -(tileSize + horizontalTileSize).width / 2,
+                y: vertY
             ),
             CGPoint(
-                x: -tileSize.width - horizontalTileSize.width / 2,
-                y: -(verticalTileSize.height - tileSize.height) * 2 / 6 - tileSize.height
+                x: -(tileSize + horizontalTileSize).width / 2,
+                y: -vertY
             ),
             CGPoint(
-                x: horizontalTileSize.width / 2,
-                y: -(verticalTileSize.height - tileSize.height) * 2 / 6 - tileSize.height
+                x: (tileSize + horizontalTileSize).width / 2,
+                y: -vertY
             ),
             CGPoint(
-                x: horizontalTileSize.width / 2,
-                y: (verticalTileSize.height - tileSize.height) * 2 / 6
+                x: (tileSize + horizontalTileSize).width / 2,
+                y: vertY
             )
         ]
         
@@ -97,11 +105,24 @@ final class BoardController {
         updateArenas()
         buildNodes()
     }
+    
+    private func initEnemyRoster() {
+        enemyRoster = Roster(
+            initEnemy(enemy: nil, ofSize: tileSize),
+            initEnemy(enemy: nil, ofSize: tileSize),
+            initEnemy(enemy: nil, ofSize: tileSize),
+            initEnemy(enemy: nil, ofSize: tileSize)
+        )
+    }
+    
+    private func initEnemy(enemy: Enemy?, ofSize size: CGSize) -> SKSpriteNode {
+        return enemy != nil ? SKSpriteNode(imageNamed: enemy!.image) : SKSpriteNode()
+    }
 }
 
 extension BoardController {
     func update() {
-        var node: Node<SKShapeNode>? = nodes.root
+        var node: Node<SKSpriteNode>? = nodes.root
         var arenaNode: Node<Arena>? = arenas.root
         while let unwrapped = node, let arena = arenaNode  {
             updateNode(unwrapped.data, with: arena.data)
@@ -123,49 +144,40 @@ extension BoardController {
         updateArenas()
     }
     
-    func updateRoster() -> Roster<SKSpriteNode?> {
-        enemyRoster.forEach { $0?.removeFromParent() }
+    func updateRoster() {
         arenas.bookmark.data.updateRoster()
-        enemyRoster = arenas.bookmark.data.roster.map { [weak self] in
-            guard let enemyInfo = $0, let self else { return nil }
-            return createEnemy(enemy: enemyInfo.0, at: enemyInfo.1, ofSize: self.tileSize / 1.5)
+        enemyRoster.forEach { [weak self] node, index in
+            guard let self else { return }
+            let image = arenas.bookmark.data.roster[index]?.0.image
+            let point = arenas.bookmark.data.roster[index]?.1
+            node.texture = image != nil ? .init(imageNamed: image!) : nil
+            node.aspectFitTo(size: tileSize / 1.5)
+            node.position = point ?? .zero
         }
         setEnemiesPerspective()
-        return enemyRoster
     }
     
     func wipeEnemies() {
         arenas.bookmark.data.wipeEnemies()
     }
     
-    func buildNode(tile: CGPoint, arena: Arena) -> SKShapeNode {
-        let tileNode = SKShapeNode(rect: CGRect(origin: tile, size: tileSize))
-        if arena.roster.first != nil || arena.roster.second != nil || arena.roster.third != nil || arena.roster.fourth != nil {
-            tileNode.fillColor = .systemGreen
-        } else {
-            tileNode.fillColor = .systemRed
-        }
-        
+    func buildNode(tile: CGPoint, arena: Arena) -> SKSpriteNode {
+        let tileNode = SKSpriteNode(imageNamed: "field")
+        tileNode.position = tile
+        tileNode.aspectFitTo(size: tileSize)
         tileNode.zPosition = AppConstants.Priority.GROUND
-        
-        let label = SKLabelNode(text: "\(arena.background)")
-        label.horizontalAlignmentMode = .center
-        label.verticalAlignmentMode = .center
-        label.position = tileNode.frame.center
-        tileNode.addChild(label)
-        
         return tileNode
     }
     
-    func updateNode(_ node: SKShapeNode, with arena: Arena) {
+    func updateNode(_ node: SKSpriteNode, with arena: Arena) {
         if arena.roster.first != nil || arena.roster.second != nil || arena.roster.third != nil || arena.roster.fourth != nil {
-            node.fillColor = .systemGreen
+//            node.fillColor = .systemGreen
         } else {
-            node.fillColor = .systemRed
+//            node.fillColor = .systemRed
         }
     }
     
-    func rebuildCurrentNode() -> SKShapeNode {
+    func rebuildCurrentNode() -> SKSpriteNode {
         nodes.updateBookmarked(with: buildNode(tile: tiles.bookmark.data, arena: arenas.bookmark.data))
     }
     
@@ -174,7 +186,7 @@ extension BoardController {
     }
     
     func buildNodes() {
-        var newNodes: [SKShapeNode] = []
+        var newNodes: [SKSpriteNode] = []
         
         var unsafeArena: Node? = arenas.root
         var unsafeTile: Node? = tiles.root
@@ -216,7 +228,13 @@ extension BoardController {
     }
 
     func getReward() -> Double {
-        arenas.bookmark.data.roster.sum { $0?.0.reward ?? 0 }
+        let networth = currentRunNetworth
+        currentRunNetworth = 0
+        return networth
+    }
+    
+    func collectTileReward() {
+        currentRunNetworth += arenas.bookmark.data.roster.sum { $0?.0.reward ?? 0 }
     }
     
     private func fillTiles() {
@@ -239,11 +257,11 @@ extension BoardController {
             data: [
                 ArenaConfig(level: 1, enemyLevels: Roster(nil, nil, nil, nil)),
                 ArenaConfig(level: 2, enemyLevels: Roster(1, 4, 1, 1)),
-                ArenaConfig(level: 3, enemyLevels: Roster(1, 2, 0, 1)),
-                ArenaConfig(level: 4, enemyLevels: Roster(0, 0, 2, 0)),
+                ArenaConfig(level: 3, enemyLevels: Roster(1, 2, 0, nil)),
+                ArenaConfig(level: 4, enemyLevels: Roster(0, 0, nil, nil)),
                 ArenaConfig(level: 5, enemyLevels: Roster(2, 2, 2, 2)),
                 ArenaConfig(level: 6, enemyLevels: Roster(1, 3, 1, 1)),
-                ArenaConfig(level: 7, enemyLevels: Roster(0, 4, 4, 1)),
+                ArenaConfig(level: 7, enemyLevels: Roster(0, nil, 4, 1)),
                 ArenaConfig(level: 8, enemyLevels: Roster(1, 0, 3, 2)),
                 ArenaConfig(level: 9, enemyLevels: Roster(1, 1, 1, 2)),
                 ArenaConfig(level: 10, enemyLevels: Roster(1, 3, 2, 0))
@@ -251,19 +269,11 @@ extension BoardController {
         )
     }
     
-    private func createEnemy(enemy: Enemy, at point: CGPoint, ofSize size: CGSize) -> SKSpriteNode {
-        let enemySprite = SKSpriteNode(imageNamed: enemy.image)
-        enemySprite.position = point
-        enemySprite.zPosition = AppConstants.Priority.ENEMY
-        enemySprite.aspectFitTo(size: size)
-        return enemySprite
-    }
-    
     private func setEnemiesPerspective() {
         enemyRoster.forEach { [weak self] enemy, index in
-            guard let enemy, let self else { return }
+            guard let self else { return }
             enemy.zPosition = AppConstants.Priority.ENEMY.moveFront(
-                UInt(self.enemyRoster.countIf { (enemy.frame.minY) < ($0?.frame.minY ?? 0) })
+                UInt(self.enemyRoster.countIf { (enemy.frame.minY) < ($0.frame.minY ) })
             )
         }
     }

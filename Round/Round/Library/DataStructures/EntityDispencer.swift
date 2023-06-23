@@ -1,5 +1,5 @@
 //
-//  EnemyManager.swift
+//  EnemyDispencer.swift
 //  Round
 //
 //  Created by Nikita Kazakov on 15.06.2023.
@@ -8,9 +8,9 @@
 import Foundation
 import GameplayKit
 
-final class EntityManager<Entity> {
+final class EntityDispencer<Entity> {
     private(set) var entityList: [Entity]
-    private let entityRandomizer: GKRandomDistribution
+    private var entityRandomizer: GKRandomDistribution
     private var xPositionRandomizer: GKRandomDistribution
     private var yPositionRandomizer: GKRandomDistribution
     private var stepMultiplier: CGFloat
@@ -39,8 +39,10 @@ final class EntityManager<Entity> {
     }
     
     /// Updates `entityList` if new list has same size.
-    func setEntityListOfSameSize(_ entities: [Entity]) {
-        guard entities.count == entityList.count else { return }
+    func set(entities: [Entity]) {
+        if entities.count != entityList.count {
+            self.entityRandomizer = .init(forDieWithSideCount: entities.count)
+        }
         entityList = entities
     }
     
