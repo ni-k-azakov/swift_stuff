@@ -21,16 +21,21 @@ final class BoardController {
     var configs: LinkedList<ArenaConfig>!
     var nodes: LinkedList<SKSpriteNode>!
     
-    var enemyRoster: Roster<SKSpriteNode>!
+    var enemyRoster: Roster<SKIlluminatedSpriteNode>!
     
     var currentRunNetworth: Double = 0
     
+    private weak var sceneDelegate: SceneDelegate?
     private var corners: [CGPoint] = []
     private var horizontals: [CGPoint] = []
     private var verticals: [CGPoint] = []
     
-    init(screenWidth: CGFloat, screenHeight: CGFloat) {
-        initBoard(screenWidth: screenWidth, screenHeight: screenHeight)
+    init(delegate: SceneDelegate? = nil) {
+        self.sceneDelegate = delegate
+    }
+    
+    func build() {
+        initBoard()
         initBattleField()
         initEnemyRoster()
     }
@@ -40,9 +45,13 @@ final class BoardController {
         battleField.position = innerField.center
         battleField.size = innerField.size
         battleField.zPosition = AppConstants.Priority.BACKGROUND
+        sceneDelegate?.addChild(battleField)
     }
     
-    private func initBoard(screenWidth: CGFloat, screenHeight: CGFloat) {
+    private func initBoard() {
+        let screenWidth = sceneDelegate?.screenSize.width ?? 0
+        let screenHeight = sceneDelegate?.screenSize.height ?? 0
+        
         self.tileSize = CGSize(width: screenWidth / 4, height: screenWidth / 4)
         
         let verticalTileSize = CGSize(width: screenWidth / 4, height: screenHeight / 5)
@@ -113,10 +122,14 @@ final class BoardController {
             initEnemy(enemy: nil, ofSize: tileSize),
             initEnemy(enemy: nil, ofSize: tileSize)
         )
+        
+        enemyRoster.forEach { [weak self] enemy in
+            self?.sceneDelegate?.addChildren(enemy.parts)
+        }
     }
     
-    private func initEnemy(enemy: Enemy?, ofSize size: CGSize) -> SKSpriteNode {
-        return enemy != nil ? SKSpriteNode(imageNamed: enemy!.image) : SKSpriteNode()
+    private func initEnemy(enemy: Enemy?, ofSize size: CGSize) -> SKIlluminatedSpriteNode {
+        return enemy != nil ? SKIlluminatedSpriteNode(imageNamed: enemy!.image) : SKIlluminatedSpriteNode(ofSize: tileSize / 1.5)
     }
 }
 

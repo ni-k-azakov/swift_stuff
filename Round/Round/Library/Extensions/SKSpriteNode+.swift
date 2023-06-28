@@ -11,7 +11,7 @@ import SpriteKit
 extension SKSpriteNode {
     func aspectFillTo(size fillSize: CGSize) {
         guard let texture else { return }
-        
+
         self.size = texture.size()
 
         let verticalRatio = fillSize.height / texture.size().height

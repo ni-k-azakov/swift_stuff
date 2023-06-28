@@ -9,16 +9,22 @@ import SwiftUI
 import SpriteKit
 import GameplayKit
 
-final class GameScene: SKScene, SKPhysicsContactDelegate {
+final class GameScene: SKScene, SKPhysicsContactDelegate, SceneDelegate {
     // Paw army
     var shownNetworth: Double = 0
     var shownCurrentRun: Double = 0
     
-    private var board: BoardController!
-    private var player: PlayerController = PlayerController()
+    var screenSize: CGSize {
+        self.frame.size
+    }
+    
+    private var board: BoardController! = BoardController()
+    private var player: PlayerController! = PlayerController()
     private var updateBindings: () -> Void = {}
     
     override func didMove(to view: SKView) {
+        board = BoardController(delegate: self)
+        player = PlayerController(delegate: self)
         initBoard()
         initAvatar()
         initPersona()
@@ -42,6 +48,10 @@ final class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func addChildren(_ children: [SKNode]) {
+        children.forEach { self.addChild($0) }
+    }
+    
     private func getChangeSpeed(_ maxValue: Double, _ currentValue: Double) -> Double {
         max((maxValue - currentValue) / 100, 1) * 5 + 4
     }
@@ -50,19 +60,20 @@ final class GameScene: SKScene, SKPhysicsContactDelegate {
 // MARK: - Inits
 extension GameScene {
     private func initBoard() {
-        let screenWidth = self.frame.width
-        let screenHeight = self.frame.height
-        
-        board = BoardController(screenWidth: screenWidth, screenHeight: screenHeight)
-        self.addChild(board.battleField)
+        board.build()
         initSpawnBoxes()
-        initEnemies()
         
         var node: Node<SKSpriteNode>? = board.nodes.root
         while let unwrapped = node {
             replaceTile(nil, with: unwrapped.data)
             node = unwrapped.next
         }
+        
+        // TODO: move to the boardController
+        let back = SKShapeNode(rect: CGRect(origin: CGPoint(x: -screenSize.width / 2, y: -screenSize.height / 2), size: CGSize(width: screenSize.width, height: screenSize.height)))
+        back.fillColor = .blue
+        back.zPosition = AppConstants.Priority.BACKGROUND
+        self.addChild(back)
     }
     
     private func initSpawnBoxes() {
@@ -81,7 +92,6 @@ extension GameScene {
             origin: avatarPos(root: board.tiles.bookmark.data),
             size: board.tileSize / 2
         ))
-        self.addChild(player.avatar)
     }
     
     private func initPersona() {
@@ -89,13 +99,6 @@ extension GameScene {
             origin: CGPoint(x: 0, y: board.innerField.minY + board.innerField.height / 4),
             size: board.tileSize
         ))
-        self.addChild(player.persona)
-    }
-    
-    private func initEnemies() {
-        board.enemyRoster.forEach { [weak self] enemy in
-            if let self { self.addChild(enemy) }
-        }
     }
 }
 

@@ -9,6 +9,7 @@ import Foundation
 
 extension CGPriority {
     var particle: CGPriority { self + 0.1 }
+    var shadow: CGPriority { self - 0.01 }
     
     func moveFront(_ quantity: UInt) -> CGPriority {
         self + 0.0000001 * CGFloat(quantity)

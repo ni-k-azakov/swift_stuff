@@ -39,4 +39,20 @@ extension CGPoint {
     static func / (left: CGPoint, right: CGPoint) -> CGPoint {
         CGPoint(x: left.x / right.x, y: left.y / right.y)
     }
+    
+    static func + (left: CGPoint, right: Double) -> CGPoint {
+        CGPoint(x: left.x + right, y: left.y + right)
+    }
+    
+    static func - (left: CGPoint, right: Double) -> CGPoint {
+        CGPoint(x: left.x - right, y: left.y - right)
+    }
+    
+    static func * (left: CGPoint, right: Double) -> CGPoint {
+        CGPoint(x: left.x * right, y: left.y * right)
+    }
+    
+    static func / (left: CGPoint, right: Double) -> CGPoint {
+        CGPoint(x: left.x / right, y: left.y / right)
+    }
 }

@@ -1,0 +1,16 @@
+PODS:
+  - PocketSVG (2.7.2)
+
+DEPENDENCIES:
+  - PocketSVG (~> 2.6)
+
+SPEC REPOS:
+  trunk:
+    - PocketSVG
+
+SPEC CHECKSUMS:
+  PocketSVG: c597e6916641fd2674d2f0cabca0d1869cb82880
+
+PODFILE CHECKSUM: 479446f7203bb07ad56e5c0fd5dde1714a3ed8fd
+
+COCOAPODS: 1.11.3
