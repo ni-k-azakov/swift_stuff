@@ -1,0 +1,60 @@
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    width: 250px;
+    padding: 10px;
+    color: #220701;
+    background-color: #fffbfa;
+    font-family: system-ui;
+    text-align: center;
+}
+
+#title {
+    padding: 5px 0px 5px 5px;
+    border-radius: 10px;
+}
+
+#language_selector_container {
+    padding: 5px;
+}
+
+#percent_range {
+    color: #220701;
+    height: 30px;
+    border-radius: 15px;
+    margin-top: 10px;
+    
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+    
+    justify-content: center;
+    align-items: center;
+
+}
+
+#percent {
+    font-weight: bold;
+}
+
+.right{
+    float: right;
+}
+
+.left{
+    float: left;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* Dark Mode styles go here. */
+}
+
+
+.topcorner{
+    position:absolute;
+    top:10px;
+    right: 10px;
+ }

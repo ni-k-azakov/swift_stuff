@@ -1,0 +1,966 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D0B63682A4D889D00A308BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B63672A4D889D00A308BB /* AppDelegate.swift */; };
+		5D0B636A2A4D889D00A308BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B63692A4D889D00A308BB /* SceneDelegate.swift */; };
+		5D0B636D2A4D889D00A308BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B636B2A4D889D00A308BB /* LaunchScreen.storyboard */; };
+		5D0B63702A4D889D00A308BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B636E2A4D889D00A308BB /* Main.storyboard */; };
+		5D0B63792A4D889D00A308BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B63782A4D889D00A308BB /* AppDelegate.swift */; };
+		5D0B637C2A4D889D00A308BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B637A2A4D889D00A308BB /* Main.storyboard */; };
+		5D0B63832A4D889D00A308BB /* InsideOut Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5D0B63822A4D889D00A308BB /* InsideOut Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5D0B638D2A4D889D00A308BB /* InsideOut Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5D0B638C2A4D889D00A308BB /* InsideOut Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5D0B63932A4D889D00A308BB /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B634E2A4D889C00A308BB /* Main.html */; };
+		5D0B63942A4D889D00A308BB /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B634E2A4D889C00A308BB /* Main.html */; };
+		5D0B63952A4D889D00A308BB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B63502A4D889C00A308BB /* Icon.png */; };
+		5D0B63962A4D889D00A308BB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B63502A4D889C00A308BB /* Icon.png */; };
+		5D0B63972A4D889D00A308BB /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B63512A4D889C00A308BB /* Style.css */; };
+		5D0B63982A4D889D00A308BB /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B63512A4D889C00A308BB /* Style.css */; };
+		5D0B63992A4D889D00A308BB /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B63522A4D889C00A308BB /* Script.js */; };
+		5D0B639A2A4D889D00A308BB /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B63522A4D889C00A308BB /* Script.js */; };
+		5D0B639B2A4D889D00A308BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B63532A4D889C00A308BB /* ViewController.swift */; };
+		5D0B639C2A4D889D00A308BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B63532A4D889C00A308BB /* ViewController.swift */; };
+		5D0B639D2A4D889D00A308BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B63542A4D889D00A308BB /* Assets.xcassets */; };
+		5D0B639E2A4D889D00A308BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B63542A4D889D00A308BB /* Assets.xcassets */; };
+		5D0B639F2A4D889D00A308BB /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B63562A4D889D00A308BB /* SafariWebExtensionHandler.swift */; };
+		5D0B63A02A4D889D00A308BB /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B63562A4D889D00A308BB /* SafariWebExtensionHandler.swift */; };
+		5D0B63A12A4D889D00A308BB /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B63582A4D889D00A308BB /* _locales */; };
+		5D0B63A22A4D889D00A308BB /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B63582A4D889D00A308BB /* _locales */; };
+		5D0B63A32A4D889D00A308BB /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B63592A4D889D00A308BB /* images */; };
+		5D0B63A42A4D889D00A308BB /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B63592A4D889D00A308BB /* images */; };
+		5D0B63A52A4D889D00A308BB /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B635A2A4D889D00A308BB /* manifest.json */; };
+		5D0B63A62A4D889D00A308BB /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B635A2A4D889D00A308BB /* manifest.json */; };
+		5D0B63A72A4D889D00A308BB /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B635B2A4D889D00A308BB /* background.js */; };
+		5D0B63A82A4D889D00A308BB /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B635B2A4D889D00A308BB /* background.js */; };
+		5D0B63A92A4D889D00A308BB /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B635C2A4D889D00A308BB /* content.js */; };
+		5D0B63AA2A4D889D00A308BB /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B635C2A4D889D00A308BB /* content.js */; };
+		5D0B63AB2A4D889D00A308BB /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B635D2A4D889D00A308BB /* popup.html */; };
+		5D0B63AC2A4D889D00A308BB /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B635D2A4D889D00A308BB /* popup.html */; };
+		5D0B63AD2A4D889D00A308BB /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B635E2A4D889D00A308BB /* popup.css */; };
+		5D0B63AE2A4D889D00A308BB /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B635E2A4D889D00A308BB /* popup.css */; };
+		5D0B63AF2A4D889D00A308BB /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B635F2A4D889D00A308BB /* popup.js */; };
+		5D0B63B02A4D889D00A308BB /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D0B635F2A4D889D00A308BB /* popup.js */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D0B63842A4D889D00A308BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D0B63482A4D889C00A308BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D0B63812A4D889D00A308BB;
+			remoteInfo = "InsideOut Extension (iOS)";
+		};
+		5D0B638E2A4D889D00A308BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D0B63482A4D889C00A308BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D0B638B2A4D889D00A308BB;
+			remoteInfo = "InsideOut Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5D0B63B62A4D889D00A308BB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5D0B63832A4D889D00A308BB /* InsideOut Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D0B63BD2A4D889D00A308BB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5D0B638D2A4D889D00A308BB /* InsideOut Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5D0B634F2A4D889C00A308BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		5D0B63502A4D889C00A308BB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		5D0B63512A4D889C00A308BB /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		5D0B63522A4D889C00A308BB /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		5D0B63532A4D889C00A308BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5D0B63542A4D889D00A308BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D0B63562A4D889D00A308BB /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		5D0B63582A4D889D00A308BB /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
+		5D0B63592A4D889D00A308BB /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		5D0B635A2A4D889D00A308BB /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		5D0B635B2A4D889D00A308BB /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
+		5D0B635C2A4D889D00A308BB /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
+		5D0B635D2A4D889D00A308BB /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
+		5D0B635E2A4D889D00A308BB /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
+		5D0B635F2A4D889D00A308BB /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
+		5D0B63642A4D889D00A308BB /* InsideOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InsideOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0B63672A4D889D00A308BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5D0B63692A4D889D00A308BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5D0B636C2A4D889D00A308BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5D0B636F2A4D889D00A308BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5D0B63712A4D889D00A308BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D0B63762A4D889D00A308BB /* InsideOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InsideOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0B63782A4D889D00A308BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5D0B637B2A4D889D00A308BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5D0B637D2A4D889D00A308BB /* InsideOut.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InsideOut.entitlements; sourceTree = "<group>"; };
+		5D0B63822A4D889D00A308BB /* InsideOut Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "InsideOut Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0B63872A4D889D00A308BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D0B638C2A4D889D00A308BB /* InsideOut Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "InsideOut Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0B63912A4D889D00A308BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D0B63922A4D889D00A308BB /* InsideOut.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InsideOut.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D0B63612A4D889D00A308BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D0B63732A4D889D00A308BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D0B637F2A4D889D00A308BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D0B63892A4D889D00A308BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D0B63472A4D889C00A308BB = {
+			isa = PBXGroup;
+			children = (
+				5D0B634C2A4D889C00A308BB /* Shared (App) */,
+				5D0B63552A4D889D00A308BB /* Shared (Extension) */,
+				5D0B63662A4D889D00A308BB /* iOS (App) */,
+				5D0B63772A4D889D00A308BB /* macOS (App) */,
+				5D0B63862A4D889D00A308BB /* iOS (Extension) */,
+				5D0B63902A4D889D00A308BB /* macOS (Extension) */,
+				5D0B63652A4D889D00A308BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5D0B634C2A4D889C00A308BB /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				5D0B63532A4D889C00A308BB /* ViewController.swift */,
+				5D0B63542A4D889D00A308BB /* Assets.xcassets */,
+				5D0B634D2A4D889C00A308BB /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		5D0B634D2A4D889C00A308BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D0B634E2A4D889C00A308BB /* Main.html */,
+				5D0B63502A4D889C00A308BB /* Icon.png */,
+				5D0B63512A4D889C00A308BB /* Style.css */,
+				5D0B63522A4D889C00A308BB /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5D0B63552A4D889D00A308BB /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				5D0B63562A4D889D00A308BB /* SafariWebExtensionHandler.swift */,
+				5D0B63572A4D889D00A308BB /* Resources */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		5D0B63572A4D889D00A308BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D0B63582A4D889D00A308BB /* _locales */,
+				5D0B63592A4D889D00A308BB /* images */,
+				5D0B635A2A4D889D00A308BB /* manifest.json */,
+				5D0B635B2A4D889D00A308BB /* background.js */,
+				5D0B635C2A4D889D00A308BB /* content.js */,
+				5D0B635D2A4D889D00A308BB /* popup.html */,
+				5D0B635E2A4D889D00A308BB /* popup.css */,
+				5D0B635F2A4D889D00A308BB /* popup.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5D0B63652A4D889D00A308BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D0B63642A4D889D00A308BB /* InsideOut.app */,
+				5D0B63762A4D889D00A308BB /* InsideOut.app */,
+				5D0B63822A4D889D00A308BB /* InsideOut Extension.appex */,
+				5D0B638C2A4D889D00A308BB /* InsideOut Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D0B63662A4D889D00A308BB /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				5D0B63672A4D889D00A308BB /* AppDelegate.swift */,
+				5D0B63692A4D889D00A308BB /* SceneDelegate.swift */,
+				5D0B636B2A4D889D00A308BB /* LaunchScreen.storyboard */,
+				5D0B636E2A4D889D00A308BB /* Main.storyboard */,
+				5D0B63712A4D889D00A308BB /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		5D0B63772A4D889D00A308BB /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				5D0B63782A4D889D00A308BB /* AppDelegate.swift */,
+				5D0B637A2A4D889D00A308BB /* Main.storyboard */,
+				5D0B637D2A4D889D00A308BB /* InsideOut.entitlements */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		5D0B63862A4D889D00A308BB /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				5D0B63872A4D889D00A308BB /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		5D0B63902A4D889D00A308BB /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				5D0B63912A4D889D00A308BB /* Info.plist */,
+				5D0B63922A4D889D00A308BB /* InsideOut.entitlements */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5D0B63632A4D889D00A308BB /* InsideOut (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D0B63B72A4D889D00A308BB /* Build configuration list for PBXNativeTarget "InsideOut (iOS)" */;
+			buildPhases = (
+				5D0B63602A4D889D00A308BB /* Sources */,
+				5D0B63612A4D889D00A308BB /* Frameworks */,
+				5D0B63622A4D889D00A308BB /* Resources */,
+				5D0B63B62A4D889D00A308BB /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D0B63852A4D889D00A308BB /* PBXTargetDependency */,
+			);
+			name = "InsideOut (iOS)";
+			productName = "InsideOut (iOS)";
+			productReference = 5D0B63642A4D889D00A308BB /* InsideOut.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5D0B63752A4D889D00A308BB /* InsideOut (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D0B63BE2A4D889D00A308BB /* Build configuration list for PBXNativeTarget "InsideOut (macOS)" */;
+			buildPhases = (
+				5D0B63722A4D889D00A308BB /* Sources */,
+				5D0B63732A4D889D00A308BB /* Frameworks */,
+				5D0B63742A4D889D00A308BB /* Resources */,
+				5D0B63BD2A4D889D00A308BB /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D0B638F2A4D889D00A308BB /* PBXTargetDependency */,
+			);
+			name = "InsideOut (macOS)";
+			productName = "InsideOut (macOS)";
+			productReference = 5D0B63762A4D889D00A308BB /* InsideOut.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5D0B63812A4D889D00A308BB /* InsideOut Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D0B63B32A4D889D00A308BB /* Build configuration list for PBXNativeTarget "InsideOut Extension (iOS)" */;
+			buildPhases = (
+				5D0B637E2A4D889D00A308BB /* Sources */,
+				5D0B637F2A4D889D00A308BB /* Frameworks */,
+				5D0B63802A4D889D00A308BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "InsideOut Extension (iOS)";
+			productName = "InsideOut Extension (iOS)";
+			productReference = 5D0B63822A4D889D00A308BB /* InsideOut Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5D0B638B2A4D889D00A308BB /* InsideOut Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D0B63BA2A4D889D00A308BB /* Build configuration list for PBXNativeTarget "InsideOut Extension (macOS)" */;
+			buildPhases = (
+				5D0B63882A4D889D00A308BB /* Sources */,
+				5D0B63892A4D889D00A308BB /* Frameworks */,
+				5D0B638A2A4D889D00A308BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "InsideOut Extension (macOS)";
+			productName = "InsideOut Extension (macOS)";
+			productReference = 5D0B638C2A4D889D00A308BB /* InsideOut Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5D0B63482A4D889C00A308BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5D0B63632A4D889D00A308BB = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					5D0B63752A4D889D00A308BB = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					5D0B63812A4D889D00A308BB = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					5D0B638B2A4D889D00A308BB = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 5D0B634B2A4D889C00A308BB /* Build configuration list for PBXProject "InsideOut" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5D0B63472A4D889C00A308BB;
+			productRefGroup = 5D0B63652A4D889D00A308BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D0B63632A4D889D00A308BB /* InsideOut (iOS) */,
+				5D0B63752A4D889D00A308BB /* InsideOut (macOS) */,
+				5D0B63812A4D889D00A308BB /* InsideOut Extension (iOS) */,
+				5D0B638B2A4D889D00A308BB /* InsideOut Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D0B63622A4D889D00A308BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0B63952A4D889D00A308BB /* Icon.png in Resources */,
+				5D0B636D2A4D889D00A308BB /* LaunchScreen.storyboard in Resources */,
+				5D0B63932A4D889D00A308BB /* Main.html in Resources */,
+				5D0B63992A4D889D00A308BB /* Script.js in Resources */,
+				5D0B639D2A4D889D00A308BB /* Assets.xcassets in Resources */,
+				5D0B63702A4D889D00A308BB /* Main.storyboard in Resources */,
+				5D0B63972A4D889D00A308BB /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D0B63742A4D889D00A308BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0B63962A4D889D00A308BB /* Icon.png in Resources */,
+				5D0B63982A4D889D00A308BB /* Style.css in Resources */,
+				5D0B637C2A4D889D00A308BB /* Main.storyboard in Resources */,
+				5D0B639A2A4D889D00A308BB /* Script.js in Resources */,
+				5D0B639E2A4D889D00A308BB /* Assets.xcassets in Resources */,
+				5D0B63942A4D889D00A308BB /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D0B63802A4D889D00A308BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0B63A72A4D889D00A308BB /* background.js in Resources */,
+				5D0B63AD2A4D889D00A308BB /* popup.css in Resources */,
+				5D0B63AB2A4D889D00A308BB /* popup.html in Resources */,
+				5D0B63A32A4D889D00A308BB /* images in Resources */,
+				5D0B63A52A4D889D00A308BB /* manifest.json in Resources */,
+				5D0B63A12A4D889D00A308BB /* _locales in Resources */,
+				5D0B63A92A4D889D00A308BB /* content.js in Resources */,
+				5D0B63AF2A4D889D00A308BB /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D0B638A2A4D889D00A308BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0B63A82A4D889D00A308BB /* background.js in Resources */,
+				5D0B63AE2A4D889D00A308BB /* popup.css in Resources */,
+				5D0B63AC2A4D889D00A308BB /* popup.html in Resources */,
+				5D0B63A42A4D889D00A308BB /* images in Resources */,
+				5D0B63A62A4D889D00A308BB /* manifest.json in Resources */,
+				5D0B63A22A4D889D00A308BB /* _locales in Resources */,
+				5D0B63AA2A4D889D00A308BB /* content.js in Resources */,
+				5D0B63B02A4D889D00A308BB /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D0B63602A4D889D00A308BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0B639B2A4D889D00A308BB /* ViewController.swift in Sources */,
+				5D0B63682A4D889D00A308BB /* AppDelegate.swift in Sources */,
+				5D0B636A2A4D889D00A308BB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D0B63722A4D889D00A308BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0B639C2A4D889D00A308BB /* ViewController.swift in Sources */,
+				5D0B63792A4D889D00A308BB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D0B637E2A4D889D00A308BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0B639F2A4D889D00A308BB /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D0B63882A4D889D00A308BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D0B63A02A4D889D00A308BB /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D0B63852A4D889D00A308BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D0B63812A4D889D00A308BB /* InsideOut Extension (iOS) */;
+			targetProxy = 5D0B63842A4D889D00A308BB /* PBXContainerItemProxy */;
+		};
+		5D0B638F2A4D889D00A308BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D0B638B2A4D889D00A308BB /* InsideOut Extension (macOS) */;
+			targetProxy = 5D0B638E2A4D889D00A308BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5D0B634E2A4D889C00A308BB /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D0B634F2A4D889C00A308BB /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		5D0B636B2A4D889D00A308BB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D0B636C2A4D889D00A308BB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5D0B636E2A4D889D00A308BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D0B636F2A4D889D00A308BB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5D0B637A2A4D889D00A308BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D0B637B2A4D889D00A308BB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5D0B63B12A4D889D00A308BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5D0B63B22A4D889D00A308BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		5D0B63B42A4D889D00A308BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2URAB9B6R7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "InsideOut Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = virvar.code.InsideOut.Extension;
+				PRODUCT_NAME = "InsideOut Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5D0B63B52A4D889D00A308BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2URAB9B6R7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "InsideOut Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = virvar.code.InsideOut.Extension;
+				PRODUCT_NAME = "InsideOut Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D0B63B82A4D889D00A308BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2URAB9B6R7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = InsideOut;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = virvar.code.InsideOut;
+				PRODUCT_NAME = InsideOut;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5D0B63B92A4D889D00A308BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2URAB9B6R7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = InsideOut;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = virvar.code.InsideOut;
+				PRODUCT_NAME = InsideOut;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D0B63BB2A4D889D00A308BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/InsideOut.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2URAB9B6R7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "InsideOut Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = virvar.code.InsideOut.Extension;
+				PRODUCT_NAME = "InsideOut Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5D0B63BC2A4D889D00A308BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/InsideOut.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2URAB9B6R7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "InsideOut Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = virvar.code.InsideOut.Extension;
+				PRODUCT_NAME = "InsideOut Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5D0B63BF2A4D889D00A308BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/InsideOut.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2URAB9B6R7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = InsideOut;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = virvar.code.InsideOut;
+				PRODUCT_NAME = InsideOut;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5D0B63C02A4D889D00A308BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/InsideOut.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2URAB9B6R7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = InsideOut;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = virvar.code.InsideOut;
+				PRODUCT_NAME = InsideOut;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5D0B634B2A4D889C00A308BB /* Build configuration list for PBXProject "InsideOut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D0B63B12A4D889D00A308BB /* Debug */,
+				5D0B63B22A4D889D00A308BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D0B63B32A4D889D00A308BB /* Build configuration list for PBXNativeTarget "InsideOut Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D0B63B42A4D889D00A308BB /* Debug */,
+				5D0B63B52A4D889D00A308BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D0B63B72A4D889D00A308BB /* Build configuration list for PBXNativeTarget "InsideOut (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D0B63B82A4D889D00A308BB /* Debug */,
+				5D0B63B92A4D889D00A308BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D0B63BA2A4D889D00A308BB /* Build configuration list for PBXNativeTarget "InsideOut Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D0B63BB2A4D889D00A308BB /* Debug */,
+				5D0B63BC2A4D889D00A308BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D0B63BE2A4D889D00A308BB /* Build configuration list for PBXNativeTarget "InsideOut (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D0B63BF2A4D889D00A308BB /* Debug */,
+				5D0B63C02A4D889D00A308BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5D0B63482A4D889C00A308BB /* Project object */;
+}
